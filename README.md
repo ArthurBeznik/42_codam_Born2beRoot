@@ -61,6 +61,8 @@ At least, using LVM. Below is an example of an expected partitioning:
 
 ### Useful links
 - [Install & config SSH server](https://devconnected.com/how-to-install-and-enable-ssh-server-on-ubuntu-20-04/)
+- [SSH man](https://linuxcommand.org/lc3_man_pages/ssh1.html)
+- [Change SSH port](https://www.cyberciti.biz/faq/howto-change-ssh-port-on-linux-or-unix-server/) 
 
 
 ## UFW firewall
@@ -88,6 +90,11 @@ Hostname of the VM must be your login ending with 42 (*abeznik42*).
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
   - compare output with example given
+
+### Useful links
+- [Change hostname Debian 10 Linux](https://www.cyberciti.biz/faq/how-to-change-hostname-on-debian-10-linux/)
+- [Change hostname Debian 10 Linux](https://www.cyberciti.biz/faq/debian-change-hostname-permanently/)
+- [Change hostname Debian 10 Linux](https://linuxize.com/post/how-to-change-hostname-on-debian-10/)
 
 
 ## Strong password policy
@@ -127,15 +134,21 @@ Hostname of the VM must be your login ending with 42 (*abeznik42*).
   - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
  
 ### Useful links
+- [sudo man](https://www.sudo.ws/man/1.8.13/sudo.man.html)
 - [Adding a user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
+- [Let sudo insult you](https://www.tecmint.com/sudo-insult-when-enter-wrong-password/)
+- [Configs for sudo](https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/)
 
 
 ## User
-In addition to the root user, a user with your login as username has to be present. And has to belong to **sudo** and **user42** groups.
+In addition to the root user, a user with your login as username has to be present. And has to belong to `sudo` and `user42` groups.
 - ***During eval:***
   - create new user.
   - assign password of choice (respecting rules) + explain how these rules were set up.
   - create a group and assign new user to it.
+
+### Useful links
+- [Create a sudo user Debian](https://phoenixnap.com/kb/create-a-sudo-user-on-debian)
 
 
 ## Script monitoring
