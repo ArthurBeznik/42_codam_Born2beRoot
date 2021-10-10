@@ -86,6 +86,8 @@ This project aims to introduce you to the wonderful world of virtualization.
     - check the contents of the files in this folder.
     - should see a history of commands used with `sudo`.
   - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
+#### Useful links
+- [Adding user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
 
 ### User:
 - In addition to the root user, a user with your login as username has to be present. And has to belong to **sudo** and **user42** groups.
