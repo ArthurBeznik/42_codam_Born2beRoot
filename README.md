@@ -7,27 +7,30 @@ This project aims to introduce you to the wonderful world of virtualization.
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is mandatory.
 - You only have to turn in a `signature.txt` file at the root of your repository. You must paste in it the signature of your machine’s virtual disk. Go to Submission and peer-evaluation for more information.
 
-## Mandatory part
+# Mandatory part
 
-### VMs:
+## VMs
 - How do VM work?
 - Purpose?
 
-### OS: Debian:
+## OS: Debian
 - Why this OS?
 - Basic differences between Debian & CentOS?
 - Differences between `aptitude` abd `apt`? What's APPArmor?
 
-### *No graphical interface*
+## *No graphical interface*
 
-### 2 encrypted partitions:
+## 2 encrypted partitions
 - At least, using LVM. Below is an example of an expected partitioning:
 
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-10 at 4 03 40 PM" src="https://user-images.githubusercontent.com/43698378/136699027-5a77000c-c0f0-4b78-8919-98be71d3e2b9.png">
 </p>
 
-### SSH service:
+### Useful links
+- [Manually partition Debian](https://unix.stackexchange.com/questions/577379/how-can-i-install-debian-with-full-disk-encryption-and-a-custom-sized-swapfile)
+
+## SSH service
 - Running on port 4242.
 - For security reasons, it must not be possible to connect using SSH as root.
 - ***During eval:***
@@ -38,7 +41,10 @@ This project aims to introduce you to the wonderful world of virtualization.
     - you can use a key or a simple password.
     - make sure you cannot use SSH with the "root" user.
 
-### UFW firewall:
+### Useful links
+- [Install & config SSH server](https://devconnected.com/how-to-install-and-enable-ssh-server-on-ubuntu-20-04/)
+
+## UFW firewall
 - Configure OS with UFW firewall.
 - Leave only port 4242 open.
 - ***During eval:***
@@ -50,14 +56,14 @@ This project aims to introduce you to the wonderful world of virtualization.
     - check that is has been added by listing the active rules.
   - delete new rule.
 
-### Hostname:
+## Hostname
 - Hostname of the VM must be your login ending with 42 (*abeznik42*). 
 - ***During eval:***
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
   - compare output with example given
 
-### Strong password policy:
+## Strong password policy
 - Password has to expire every 30 days.
 - Minimum number of days allowed before modification of a password will be set to 2.
 - User has to receive a warning message 7 days before their password expires.
@@ -72,7 +78,7 @@ This project aims to introduce you to the wonderful world of virtualization.
      - explain advantages of this password policy.
      - explain advantages and disadvantages of its implementation.
 
-### `sudo` strict rules:
+## `sudo` strict rules
 - Max 3 attempts on authentication using `sudo` in event of incorrect password.
 - Display custom message on error due to incorrect password when using `sudo`.
 - Archive each action using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
@@ -86,17 +92,18 @@ This project aims to introduce you to the wonderful world of virtualization.
     - check the contents of the files in this folder.
     - should see a history of commands used with `sudo`.
   - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
-#### Useful links
-- [Adding user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
+ 
+### Useful links
+- [Adding a user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
 
-### User:
+## User
 - In addition to the root user, a user with your login as username has to be present. And has to belong to **sudo** and **user42** groups.
 - ***During eval:***
   - create new user.
   - assign password of choice (respecting rules) + explain how these rules were set up.
   - create a group and assign new user to it.
 
-### Script monitoring:
+## Script monitoring
 - `monitoring.sh` developped in `bash`.
 - At server startup, the script will display some information on all terminals every 10min (see `wall`), banner is optional, no error must be visible.
 - Following information must be displayed:
