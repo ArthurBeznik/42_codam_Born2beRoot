@@ -36,7 +36,11 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 
 ## *No graphical interface*
+> Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
+
 Deselect **desktop environment** from **software selection** during the install in order to get a non-GUI Debian install.
+
+X.org = debian.org ??
 
 ## 2 encrypted partitions
 At least, using LVM. Below is an example of an expected partitioning:
