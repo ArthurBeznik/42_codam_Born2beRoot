@@ -7,6 +7,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is mandatory.
 - You only have to turn in a `signature.txt` file at the root of your repository. You must paste in it the signature of your machine’s virtual disk. Go to Submission and peer-evaluation for more information.
 
+
 # Mandatory part
 
 ## VMs
@@ -15,16 +16,29 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ### Useful links
 - [Install Debian Linux in VM](https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/)
+- [What is a VM?](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#overview)
+- [What is a VM?](https://www.vmware.com/topics/glossary/content/virtual-machine)
+
 
 ## OS: Debian
 - Why this OS?
 - Basic differences between Debian & CentOS?
-- Differences between `aptitude` abd `apt`? What's APPArmor?
+- Differences between `aptitude` and `apt`? What's APPArmor?
+
+### Useful links
+- [OS - Overview](https://www.tutorialspoint.com/operating_system/os_overview.htm)
+- [CentOS vs Debian](https://www.openlogic.com/blog/centos-vs-debian)
+- [CentOS vs Debian](https://www.educba.com/centos-vs-debian/)
+- [CentOS vs Debian](https://1gbits.com/blog/debian-vs-centos/)
+- [Aptitude vs apt](https://www.tecmint.com/difference-between-apt-and-aptitude/#:~:text=Apt%2Dget%20being%20a%20lower,operation%20by%20entering%20required%20commands.)
+- [APPArmor](https://www.howtogeek.com/118222/htg-explains-what-apparmor-is-and-how-it-secures-your-ubuntu-system/)
+
 
 ## *No graphical interface*
+Deselect **desktop environment** from **software selection** during the install in order to get a non-GUI Debian install.
 
 ## 2 encrypted partitions
-- At least, using LVM. Below is an example of an expected partitioning:
+At least, using LVM. Below is an example of an expected partitioning:
 
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-10 at 4 03 40 PM" src="https://user-images.githubusercontent.com/43698378/136699027-5a77000c-c0f0-4b78-8919-98be71d3e2b9.png">
@@ -32,6 +46,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ### Useful links
 - [Manually partition Debian](https://unix.stackexchange.com/questions/577379/how-can-i-install-debian-with-full-disk-encryption-and-a-custom-sized-swapfile)
+
 
 ## SSH service
 - Running on port 4242.
@@ -47,8 +62,9 @@ This project aims to introduce you to the wonderful world of virtualization.
 ### Useful links
 - [Install & config SSH server](https://devconnected.com/how-to-install-and-enable-ssh-server-on-ubuntu-20-04/)
 
+
 ## UFW firewall
-- Configure OS with UFW firewall.
+- Configure OS with UFW (Uncomplicated) FireWall.
 - Leave only port 4242 open.
 - ***During eval:***
   - "UFW" program properly installed.
@@ -59,12 +75,20 @@ This project aims to introduce you to the wonderful world of virtualization.
     - check that is has been added by listing the active rules.
   - delete new rule.
 
+### Useful links
+- [UFW Debian](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29)
+- [Set up UFW on Debian 9](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-debian-9)
+- [Set up UFW on Debian 10](https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/)
+- [Set up UFW on Debian 10](https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-debian-10/)
+
+
 ## Hostname
-- Hostname of the VM must be your login ending with 42 (*abeznik42*). 
+Hostname of the VM must be your login ending with 42 (*abeznik42*). 
 - ***During eval:***
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
   - compare output with example given
+
 
 ## Strong password policy
 - Password has to expire every 30 days.
@@ -86,6 +110,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [Set strong password policy](https://computingforgeeks.com/enforce-strong-user-password-policy-ubuntu-debian/)
 - [Force users to use strong passwords in Debian](https://ostechnix.com/force-users-use-strong-passwords-debian-ubuntu/)
 
+
 ## `sudo` strict rules
 - Max 3 attempts on authentication using `sudo` in event of incorrect password.
 - Display custom message on error due to incorrect password when using `sudo`.
@@ -104,12 +129,14 @@ This project aims to introduce you to the wonderful world of virtualization.
 ### Useful links
 - [Adding a user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
 
+
 ## User
-- In addition to the root user, a user with your login as username has to be present. And has to belong to **sudo** and **user42** groups.
+In addition to the root user, a user with your login as username has to be present. And has to belong to **sudo** and **user42** groups.
 - ***During eval:***
   - create new user.
   - assign password of choice (respecting rules) + explain how these rules were set up.
   - create a group and assign new user to it.
+
 
 ## Script monitoring
 - `monitoring.sh` developped in `bash`.
@@ -144,4 +171,5 @@ Check some of the subject’s requirements:
 <img width="636" alt="Screen Shot 2021-10-10 at 5 12 50 PM" src="https://user-images.githubusercontent.com/43698378/136701852-a3309cc5-fae6-4d6e-9ca5-939b0ad138f2.png">
 </p>
 
-## That's all folks!
+
+# That's all folks!
