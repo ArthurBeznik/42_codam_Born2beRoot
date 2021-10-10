@@ -67,7 +67,7 @@ At least, using LVM. Below is an example of an expected partitioning:
 
 ## UFW firewall
 - Configure OS with UFW (Uncomplicated) FireWall.
-- Leave only port 4242 open.
+- Leave only port _4242_ open.
 - ***During eval:***
   - "UFW" program properly installed.
   - working properly.
@@ -85,7 +85,7 @@ At least, using LVM. Below is an example of an expected partitioning:
 
 
 ## Hostname
-Hostname of the VM must be your login ending with 42 (*abeznik42*). 
+Hostname of the VM must be your _login ending with 42_ (*abeznik42*). 
 - ***During eval:***
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
@@ -98,15 +98,15 @@ Hostname of the VM must be your login ending with 42 (*abeznik42*).
 
 
 ## Strong password policy
-- Password has to expire every 30 days.
-- Minimum number of days allowed before modification of a password will be set to 2.
-- User has to receive a warning message 7 days before their password expires.
+- Password has to _expire every 30 days_.
+- _Minimum number of days allowed before modification_ of a password will be set to _2_.
+- User has to _receive a warning message 7 days before their password expires_.
 - Password must 
-  - be at least 10 characters long
-  - contain an uppercase letter and number
-  - not contain more than 3 consecutive identical characters
-  - not include the name of the user
-  - **does not apply to root password**: have at least 7 character that are not part of the former password
+  - be at least _10 characters long_
+  - contain an _uppercase letter and number_
+  - **not** contain more than _3 consecutive identical characters_
+  - **not** include the _name of the user_
+  - **does not apply to root password**: have _at least 7 character_ that are **not** part of the former password
   - **does apply to root password**: after setting up config files, you will have to change all the passwords of the acounts present on the VM.
   - ***During eval:***
      - explain advantages of this password policy.
@@ -119,11 +119,11 @@ Hostname of the VM must be your login ending with 42 (*abeznik42*).
 
 
 ## `sudo` strict rules
-- Max 3 attempts on authentication using `sudo` in event of incorrect password.
-- Display custom message on error due to incorrect password when using `sudo`.
-- Archive each action using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
+- Max _3 attempts_ on authentication using `sudo` in event of incorrect password.
+- Display _custom message on error_ due to incorrect password when using `sudo`.
+- _Archive each action_ using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
 - `TTY` mode has to be enabled for security reasons.
-- For security reasons the paths that can be used by `sudo` must be restricted. Example: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
+- For security reasons the paths that can be used by `sudo` must be _restricted_. Example: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
 - ***During eval:***
   - `sudo` properly installed.
   - assign new user to the `sudo` group.
