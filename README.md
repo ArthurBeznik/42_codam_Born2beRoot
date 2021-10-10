@@ -13,6 +13,9 @@ This project aims to introduce you to the wonderful world of virtualization.
 - How do VM work?
 - Purpose?
 
+### Useful links
+- [Install Debian Linux in VM](https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/)
+
 ## OS: Debian
 - Why this OS?
 - Basic differences between Debian & CentOS?
@@ -77,6 +80,11 @@ This project aims to introduce you to the wonderful world of virtualization.
   - ***During eval:***
      - explain advantages of this password policy.
      - explain advantages and disadvantages of its implementation.
+
+### Useful links
+- [Set password policy in Linux](https://ostechnix.com/how-to-set-password-policies-in-linux/)
+- [Set strong password policy](https://computingforgeeks.com/enforce-strong-user-password-policy-ubuntu-debian/)
+- [Force users to use strong passwords in Debian](https://ostechnix.com/force-users-use-strong-passwords-debian-ubuntu/)
 
 ## `sudo` strict rules
 - Max 3 attempts on authentication using `sudo` in event of incorrect password.
