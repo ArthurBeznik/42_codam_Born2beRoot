@@ -23,7 +23,8 @@ This project aims to introduce you to the wonderful world of virtualization.
 ## OS: Debian
 - Why this OS?
 - Basic differences between Debian & CentOS?
-- Differences between `aptitude` and `apt`? What's APPArmor?
+- Differences between `aptitude` and `apt`?
+- What's APPArmor?
 
 ### Useful links
 - [OS - Overview](https://www.tutorialspoint.com/operating_system/os_overview.htm)
