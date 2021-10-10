@@ -39,7 +39,7 @@ Deselect **desktop environment** from **software selection** during the install 
 
 ## 2 encrypted partitions
 At least, using LVM. Below is an example of an expected partitioning:
-
+`lsblk`
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-10 at 4 03 40 PM" src="https://user-images.githubusercontent.com/43698378/136699027-5a77000c-c0f0-4b78-8919-98be71d3e2b9.png">
 </p>
@@ -180,6 +180,7 @@ In addition to the root user, a user with your login as username has to be prese
 </p>
 
 Check some of the subject’s requirements:
+`head -n 2 /etc/os-release`
 <p align=center>
 <img width="636" alt="Screen Shot 2021-10-10 at 5 12 50 PM" src="https://user-images.githubusercontent.com/43698378/136701852-a3309cc5-fae6-4d6e-9ca5-939b0ad138f2.png">
 </p>
