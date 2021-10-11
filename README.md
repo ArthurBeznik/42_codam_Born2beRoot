@@ -54,7 +54,7 @@ At least, using LVM. Below is an example of an expected partitioning:
 
 
 ## Hostname
-Hostname of the VM must be your _login ending with 42_ (*abeznik42*). 
+> Hostname of the VM must be your _login ending with 42_ (*abeznik42*). 
 - **During eval:**
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
@@ -67,11 +67,11 @@ Hostname of the VM must be your _login ending with 42_ (*abeznik42*).
 
 
 ## `sudo` strict rules
-- Max 3 attempts on authentication using `sudo` in event of incorrect password.
-- Display custom message on error due to incorrect password when using `sudo`.
-- Archive each action using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
-- `TTY` mode has to be enabled for security reasons.
-- For security reasons the paths that can be used by `sudo` must be restricted. Example: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
+> - Max 3 attempts on authentication using `sudo` in event of incorrect password.
+> - Display custom message on error due to incorrect password when using `sudo`.
+> - Archive each action using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
+> - `TTY` mode has to be enabled for security reasons.
+> - For security reasons the paths that can be used by `sudo` must be restricted. Example: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
 - **During eval:**
   - `sudo` properly installed.
   - assign new user to the `sudo` group.
@@ -178,8 +178,8 @@ Defaults   passwd_tries=3
 
 
 ## SSH service
-- Running on port 4242.
-- For security reasons, it must not be possible to connect using SSH as root.
+> - Running on port 4242.
+> - For security reasons, it must not be possible to connect using SSH as root.
 - **During eval:**
   - SSH service properly installed.
   - working properly.
@@ -325,8 +325,8 @@ From there, your SSH server **won’t be accessible anymore**.
 
 
 ## UFW firewall
-- Configure OS with UFW (Uncomplicated) FireWall.
-- Leave only port 4242 open.
+> - Configure OS with UFW (Uncomplicated) FireWall.
+> - Leave only port 4242 open.
 - **During eval:**
   - "UFW" program properly installed.
   - working properly.
@@ -396,16 +396,16 @@ You will need to confirm `y` when prompted to delete the rule from your system a
 
 
 ## Strong password policy
-- Password has to expire every 30 days.
-- Minimum number of days allowed before modification of a password will be set to 2.
-- User has to receive a warning message 7 days before their password expires.
-- Password must:
-  - be at least 10 characters long
-  - contain an uppercase letter and number
-  - **not** contain more than 3 consecutive identical characters
-  - **not** include the name of the user
-  - **does not apply to root password**: have at least 7 character that are **not** part of the former password
-  - **does apply to root password**: after setting up config files, you will have to change all the passwords of the acounts present on the VM.
+> - Password has to expire every 30 days.
+> - Minimum number of days allowed before modification of a password will be set to 2.
+> - User has to receive a warning message 7 days before their password expires.
+> - Password must:
+  > - be at least 10 characters long
+  > - contain an uppercase letter and number
+  > - **not** contain more than 3 consecutive identical characters
+  > - **not** include the name of the user
+  > - **does not apply to root password**: have at least 7 character that are **not** part of the former password
+  > - **does apply to root password**: after setting up config files, you will have to change all the passwords of the acounts present on the VM.
   - **During eval:**
      - explain advantages of this password policy.
      - explain advantages and disadvantages of its implementation.
@@ -417,7 +417,7 @@ You will need to confirm `y` when prompted to delete the rule from your system a
 
 
 ## User
-In addition to the root user, a user with your login as username has to be present. And has to belong to `sudo` and `user42` groups.
+> In addition to the root user, a user with your login as username has to be present. And has to belong to `sudo` and `user42` groups.
 - **During eval:**
   - create new user.
   - assign password of choice (respecting rules) + explain how these rules were set up.
