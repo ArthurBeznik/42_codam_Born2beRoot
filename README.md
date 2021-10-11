@@ -151,7 +151,7 @@ However, even if we connect without a password, root login is not recommended : 
 As a consequence, you can set this option to “no” in order to restrict it completely.
 
 ```bash
-#PermitRootLogin
+#PermitRootLogin prohibit-password
 
 PermitRootLogin no
 ```
@@ -232,13 +232,35 @@ And enable it with
 sudo ufw enable
 ```
 
-### Enable SSH traffic on UFW
+### Configuration
 If you are using UFW as a default firewall on your Ubuntu 20.04 host, it is likely that you need to allow SSH connections on your host.
 
+#### 1. Enable SSH connections
 To enable SSH connections on your host, run the following command:
 ```bash
 sudo ufw allow ssh
 ```
+
+#### 2. Allow/deny rules
+Allow
+```bash
+sudo ufw allow <port>/<optional: protocol>
+```
+
+We need to allow incoming tcp and udp packet on port 4242:
+```bash
+sudo ufw allow 4242
+```
+
+We also need to delete the default 22/tcp rule
+```bash
+sudo ufw status numbered
+
+sudo ufw delete <rule_number_here>
+or
+sudo ufw delete allow/deny <port>/<optional: protocol>
+```
+You will need to confirm `y` when prompted to delete the rule from your system and verify again using `sudo ufw status`
 
 ### Useful links
 - [UFW Debian](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29)
