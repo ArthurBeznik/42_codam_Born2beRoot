@@ -376,7 +376,7 @@ Defaults  requiretty
 By default, sudo logs through syslog(3). However, to specify a custom log file, use the logfile parameter like so:
 
 ```bash
-Defaults  logfile="/var/log/sudo.log"
+Defaults  logfile="/var/log/sudo/sudo.log"
 ```
 
 To log hostname and the four-digit year in the custom log file, use log_host and log_year parameters respectively as follows:
@@ -410,7 +410,7 @@ The parameter passwd_tries is used to specify the number of times a user can try
 The default value is 3:
 
 ```bash
-Defaults   passwd_tries=5 
+Defaults   passwd_tries=3 
 ```
 
 ### Useful links
