@@ -94,7 +94,7 @@ This command should run a complete installation of an OpenSSH server.
 
 From steps displayed on your console, you should see the following details :
 
-- A configuration file is created in the /etc/ssh folder named sshd_config;
+- A configuration file is created in the `/etc/ssh` folder named sshd_config;
 - Symbolic links are created : one named sshd.service (your systemd service) and one in the multi-user target (to boot SSH when you log in).
 
 As stated earlier, a SSH service was created and you can check that it is actually up and running.
@@ -123,7 +123,7 @@ Edit the config file with
 ```bash
 sudo vi /etc/ssh/sshd_config
 ```
-**Warning:** search how to use sudo vi, it's **VERY** confusing to use!
+**Warning:** search how to use `sudo vi`, it's **VERY** confusing to use!
 
 Look for the following line.
 ```bash
@@ -133,9 +133,7 @@ Port 4242
 ```
 **Uncomment the line you edit**, or it will not consider the changes.
 
-Make sure to change your port to one that is not reserved for other protocols.
-
-Be careful when you change your default SSH port, **you will have to specify it when connecting to it**.
+Make sure to change your port to one that is not reserved for other protocols. Be careful when you change your default SSH port, **you will have to specify it when connecting to it**.
 
 #### 2. Disabling Root Login on your SSH server
 By default, on recent distributions, root login is set to “prohibit-password”.
@@ -177,23 +175,22 @@ If you are connecting over a LAN network, make sure to get the local IP address 
 $ ip a
 ```
 
-For example, in order to connect to my own instance located at 10.0.2.15, I would run the following command
+For example, I would run the following command
 ```bash
 $ ssh -p 4242 abeznik@abeznik42
 ```
 You will be asked to provide your password and to certify that the authenticity of the server is correct.
 
 #### 5. Exiting your SSH server
-In order to exit from your SSH server on Ubuntu 20.04, you can hit Ctrl + D or type `logout` and your connection will be terminated.
+In order to exit from your SSH server, you can hit Ctrl + D or type `logout` and your connection will be terminated.
 
 #### 6. Disabling your SSH server
-In order to disable your SSH server on Ubuntu 20.04, run the following command
+In order to disable your SSH server, run the following command
 ```bash
 sudo systemctl stop sshd
 
 sudo systemctl status sshd
 ```
-
 From there, your SSH server **won’t be accessible anymore**.
 
 ### Useful links
