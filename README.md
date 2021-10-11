@@ -441,7 +441,18 @@ cat /etc/passwd
 
 ### 2. Creating group
 ```bash
-<groupadd groupname>
+groupadd <groupname>
+```
+
+### 3. Adding user to group
+```bash
+usermod -aG <groupname> <username>
+```
+-aG is the option that tells the command to add the user to a specific group. The -a option adds a user to the group without removing it from current groups. The -G option states the group where to add the user. In this case, these two options always go together.
+
+To verify the new Debian sudo user was added to the group, run the command:
+```bash
+getent group sudo
 ```
 
 ### Useful links
