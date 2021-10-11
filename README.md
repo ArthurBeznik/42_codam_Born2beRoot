@@ -427,6 +427,23 @@ In addition to the root user, a user with your login as username has to be prese
   - assign password of choice (respecting rules) + explain how these rules were set up.
   - create a group and assign new user to it.
 
+### 1. Adding user
+```bash
+adduser <username>
+```
+
+To list all users account, run
+```bash
+getent passwd
+or
+cat /etc/passwd
+```
+
+### 2. Creating group
+```bash
+<groupadd groupname>
+```
+
 ### Useful links
 - [Create a sudo user Debian](https://phoenixnap.com/kb/create-a-sudo-user-on-debian)
 
