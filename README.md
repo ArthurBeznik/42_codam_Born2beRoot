@@ -2,6 +2,8 @@
 
 This project aims to introduce you to the wonderful world of virtualization.
 
+# Might be useful
+
 ## General guidelines
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is **mandatory**.
 - You only have to turn in a `signature.txt` file at the root of your repository. You must paste in it the signature of your machine’s virtual disk. Go to Submission and peer-evaluation for more information.
@@ -136,7 +138,96 @@ Hostname of the VM must be your _login ending with 42_ (*abeznik42*).
     - check the contents of the files in this folder.
     - should see a history of commands used with `sudo`.
   - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
- 
+
+
+### Install
+On a fresh Debian install `sudo` does not work by default. You need to add your user to the `sudo` group in order to get the command working.
+
+#### 1. Get root first
+
+If you are already logged in on another user, use the `su` command.
+
+Enter your root password that you set during installation to get the root prompt.
+
+#### 2. Add user to the sudo group
+
+This will add your user to the sudo group.
+
+`adduser <username> sudo`
+
+After this start a new shell or logout and login again. Try running the commands with sudo now and they will surely work with your own user.
+
+Additionally in some cases like the minimal installations of Debian, the sudo program/command itself might not be present. In that case you will also need to install sudo.
+
+`apt install sudo`
+
+### Configuration
+
+Always edit sudo file using `sudo visudo`.
+
+#### 1. Set a Secure PATH
+
+This is the path used for every command run with sudo, it has two importances:
+
+- Used when a system administrator does not trust sudo users to have a secure PATH environment variable
+- To separate “root path” and “user path”, only users defined by exempt_group are not affected by this setting.
+
+To set it, add the line:
+
+``` bash
+Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+```
+
+#### 2. Enable sudo on TTY User Login Session
+
+To enable sudo to be invoked from a real tty but not through methods such as cron or cgi-bin scripts, add the line:
+
+```bash
+Defaults  requiretty 
+```
+
+#### 3. Create a sudo Log File
+
+By default, sudo logs through syslog(3). However, to specify a custom log file, use the logfile parameter like so:
+
+```bash
+Defaults  logfile="/var/log/sudo.log"
+```
+
+To log hostname and the four-digit year in the custom log file, use log_host and log_year parameters respectively as follows:
+
+```bash
+Defaults  log_host, log_year, logfile="/var/log/sudo.log"
+```
+
+#### 4. Log sudo Command Input/Output
+
+The log_input and log_output parameters enable sudo to run a command in pseudo-tty and log all user input and all output sent to the screen receptively.
+
+The default I/O log directory is /var/log/sudo-io, and if there is a session sequence number, it is stored in this directory. You can specify a custom directory through the iolog_dir parameter.
+
+``` bash
+Defaults   log_input, log_output
+```
+
+#### 5. Display Custom Message on wrong sudo password
+
+When a user enters a wrong password, a certain message is displayed on the command line. The default message is “sorry, try again”, you can modify the message using the badpass_message parameter as follows:
+
+``` bash
+Defaults  badpass_message="Password is wrong, please try again"
+```
+
+#### 6. Increase sudo password Tries Limit
+
+The parameter passwd_tries is used to specify the number of times a user can try to enter a password.
+
+The default value is 3:
+
+```bash
+Defaults   passwd_tries=5 
+```
+
 ### Useful links
 - [sudo man](https://www.sudo.ws/man/1.8.13/sudo.man.html)
 - [Adding a user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
@@ -188,6 +279,5 @@ Check some of the subject’s requirements:
 <p align=center>
 <img width="636" alt="Screen Shot 2021-10-10 at 5 12 50 PM" src="https://user-images.githubusercontent.com/43698378/136701852-a3309cc5-fae6-4d6e-9ca5-939b0ad138f2.png">
 </p>
-
 
 # That's all folks!
