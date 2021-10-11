@@ -246,6 +246,12 @@ Allow
 ```bash
 sudo ufw allow <port>/<optional: protocol>
 ```
+Delete
+```bash
+sudo ufw delete <rule_number_here>
+or
+sudo ufw delete allow/deny <port>/<optional: protocol>
+```
 
 We need to allow incoming tcp and udp packet on port 4242:
 ```bash
@@ -258,7 +264,7 @@ sudo ufw status numbered
 
 sudo ufw delete <rule_number_here>
 or
-sudo ufw delete allow/deny <port>/<optional: protocol>
+sudo ufw delete allow 22/tcp
 ```
 You will need to confirm `y` when prompted to delete the rule from your system and verify again using `sudo ufw status`
 
