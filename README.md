@@ -3,7 +3,6 @@
 This project aims to introduce you to the wonderful world of virtualization.
 
 ## General guidelines
-
 - The use of *VirtualBox* (or UTM if you can’t use VirtualBox) is **mandatory**.
 - You only have to turn in a `signature.txt` file at the root of your repository. You must paste in it the signature of your machine’s virtual disk. Go to Submission and peer-evaluation for more information.
 
@@ -35,10 +34,10 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [APPArmor](https://www.howtogeek.com/118222/htg-explains-what-apparmor-is-and-how-it-secures-your-ubuntu-system/)
 
 
-## *No graphical interface*
+## No graphical interface
 > Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
 
-Deselect **desktop environment** from **software selection** during the install in order to get a non-GUI Debian install.
+Deselect **desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
 
 X.org = debian.org ??
 
@@ -91,7 +90,7 @@ At least, using LVM. Below is an example of an expected partitioning:
 
 ## Hostname
 Hostname of the VM must be your _login ending with 42_ (*abeznik42*). 
-- ***During eval:***
+- **During eval:**
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
   - compare output with example given
@@ -106,7 +105,7 @@ Hostname of the VM must be your _login ending with 42_ (*abeznik42*).
 - Password has to expire every 30 days.
 - Minimum number of days allowed before modification of a password will be set to 2.
 - User has to receive a warning message 7 days before their password expires.
-- Password must 
+- Password must:
   - be at least 10 characters long
   - contain an uppercase letter and number
   - **not** contain more than 3 consecutive identical characters
@@ -172,7 +171,7 @@ In addition to the root user, a user with your login as username has to be prese
   - The number of users using the server.
   - The IPv4 address of your server and its MAC (Media Access Control) address.
   - The number of commands executed with the `sudo` program.
-- ***During eval:***
+- **During eval:**
   - how the script works.
   - what "cron" is.
   - how it was set up so that it runs every 10min.
