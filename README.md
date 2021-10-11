@@ -400,12 +400,12 @@ You will need to confirm `y` when prompted to delete the rule from your system a
 > - Minimum number of days allowed before modification of a password will be set to 2.
 > - User has to receive a warning message 7 days before their password expires.
 > - Password must:
-  > - be at least 10 characters long
-  > - contain an uppercase letter and number
-  > - **not** contain more than 3 consecutive identical characters
-  > - **not** include the name of the user
-  > - **does not apply to root password**: have at least 7 character that are **not** part of the former password
-  > - **does apply to root password**: after setting up config files, you will have to change all the passwords of the acounts present on the VM.
+>   - be at least 10 characters long
+>   - contain an uppercase letter and number
+>   - **not** contain more than 3 consecutive identical characters
+>   - **not** include the name of the user
+>   - **does not apply to root password**: have at least 7 character that are **not** part of the former password
+>   - **does apply to root password**: after setting up config files, you will have to change all the passwords of the acounts present on the VM.
   - **During eval:**
      - explain advantages of this password policy.
      - explain advantages and disadvantages of its implementation.
@@ -456,21 +456,21 @@ getent group sudo
 
 
 ## Script monitoring
-- `monitoring.sh` developped in `bash`.
-- At server startup, the script will display some information on all terminals every 10min (see `wall`), banner is optional, no error must be visible.
-- Following information must be displayed:
-  - Architecture of your OS and its kernel version
-  - The number of physical processors.
-  - The number of virtual processors.
-  - The current available RAM on your server and its utilization rate as a percentage.
-  - The current available memory on your server and its utilization rate as a percentage.
-  - The current utilization rate of your processors as a percentage.
-  - The date and time of the last reboot.
-  - Whether LVM is active or not.
-  - The number of active connections.
-  - The number of users using the server.
-  - The IPv4 address of your server and its MAC (Media Access Control) address.
-  - The number of commands executed with the `sudo` program.
+>- `monitoring.sh` developped in `bash`.
+>- At server startup, the script will display some information on all terminals every 10min (see `wall`), banner is optional, no error must be visible.
+>- Following information must be displayed:
+>   - Architecture of your OS and its kernel version
+>   - The number of physical processors.
+>   - The number of virtual processors.
+>   - The current available RAM on your server and its utilization rate as a percentage.
+>   - The current available memory on your server and its utilization rate as a percentage.
+>   - The current utilization rate of your processors as a percentage.
+>   - The date and time of the last reboot.
+>   - Whether LVM is active or not.
+>   - The number of active connections.
+>   - The number of users using the server.
+>   - The IPv4 address of your server and its MAC (Media Access Control) address.
+>   - The number of commands executed with the `sudo` program.
 - **During eval:**
   - how the script works.
   - what "cron" is.
