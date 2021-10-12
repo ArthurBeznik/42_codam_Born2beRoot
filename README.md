@@ -189,7 +189,7 @@ By default, sudo logs through syslog(3). However, to specify a custom log file, 
 Defaults  logfile="/var/log/sudo/sudo.log"
 
 Defaults  iolog_dir=/var/log/sudo/
-```sudo
+```
 
 #### 4. Log sudo Command Input/Output
 
