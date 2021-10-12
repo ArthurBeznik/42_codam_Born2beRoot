@@ -42,19 +42,65 @@ Deselect **Desktop environment** and **GNOME** from **software selection** durin
 
 X.org = debian.org ??
 
-## 2 encrypted partitions
-At least, using LVM. Below is an example of an expected partitioning:
-`lsblk`
+## Encrypted partitions
+> You must create **at least 2 encrypted partitions using LVM**. Below is an example of the
+expected partitioning:
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-10 at 4 03 40 PM" src="https://user-images.githubusercontent.com/43698378/136699027-5a77000c-c0f0-4b78-8919-98be71d3e2b9.png">
 </p>
 
+Using the command `lsblk` will display the partitions.
+
+### Configuration
+Here is how we can create encrypted partitions using LVM, in the Debian installer.
+
+#### Step 1
+Once reaching the partition disks menu. Select **Guided - use entire disk and set up encrypted LVM**
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-12 at 11 47 46 AM" src="https://user-images.githubusercontent.com/43698378/136933537-0c5f7d2f-41ca-4fea-b8ed-fa9b175eb7ae.png">
+</p>
+
+#### Step 2
+Choose the disk to partition, there should only be one, as we are giving the whole disk
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-12 at 11 53 18 AM" src="https://user-images.githubusercontent.com/43698378/136934478-a5cfd2a3-4842-4f10-ae85-4b042914cd14.png">
+</p>
+
+Read this about partitioning from debian.org:
+> When using LVM or encrypted LVM, the installer will create most partitions inside one big partition; the advantage of this method is that partitions inside this big partition can be resized relatively easily later. **In the case of encrypted LVM the big partition will not be readable without knowing a special key phrase, thus providing extra security of your (personal) data.**
+
+> When using encrypted LVM, the installer will also automatically **erase the disk by writing random data to it**. This further improves security (as it makes it impossible to tell which parts of the disk are in use and also makes sure that any traces of previous installations are erased), but may take some time depending on the size of your disk.
+
+#### Step 3
+We now have to decide on the partitioning scheme, choose **All files in one partition**
+<p align=center>
+  <img width="524" alt="Screen Shot 2021-10-12 at 11 58 50 AM" src="https://user-images.githubusercontent.com/43698378/136935153-b7a5e67c-608b-4d4f-aa27-cca31b13ada3.png">
+</p>
+
+#### Step 4
+Accept the modifications to be made and the installer should format and partition the disk.
+
+#### Step 5
+We now have to give a passphrase to encrypt:
+<p align=center>
+  <img width="524" alt="Screen Shot 2021-10-12 at 12 03 03 PM" src="https://user-images.githubusercontent.com/43698378/136935811-8b1948ac-74a0-48f7-a147-243d9dbfefef.png">
+</p>
+
+#### Step 6
+We will now give the amount of volume group to use for guied partitioning. The example in the subject shows a 7.5 GB encrypted partition, guess we'll be oing the same:
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-12 at 12 05 00 PM" src="https://user-images.githubusercontent.com/43698378/136936240-0a74792a-dceb-44f8-9728-926b19bcfd86.png">
+</p>
+
+#### Step 7
+Accept the modifications and writes and it should be good.
+
 ### Useful links
 - [Manually partition Debian](https://unix.stackexchange.com/questions/577379/how-can-i-install-debian-with-full-disk-encryption-and-a-custom-sized-swapfile)
-
+- [Debian - partitioning](https://www.debian.org/releases/buster//amd64/ch06s03.en.html#di-partition)
 
 ## Hostname
-> Hostname of the VM must be your _login ending with 42_ (*abeznik42*). 
+> The hostname of your virtual machine must be your login ending with 42 (e.g., abeznik42).
 - **During eval:**
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
@@ -67,6 +113,8 @@ At least, using LVM. Below is an example of an expected partitioning:
 
 
 ## `sudo` strict rules
+> To set up a strong configuration for your sudo group, you have to comply with the
+following requirements:
 > - Max 3 attempts on authentication using `sudo` in event of incorrect password.
 > - Display custom message on error due to incorrect password when using `sudo`.
 > - Archive each action using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
@@ -178,8 +226,8 @@ Defaults   passwd_tries=3
 
 
 ## SSH service
-> - Running on port 4242.
-> - For security reasons, it must not be possible to connect using SSH as root.
+> A SSH service will be running on **port 4242 only**. For security reasons, it must **not** be
+possible to connect using SSH as root.
 - **During eval:**
   - SSH service properly installed.
   - working properly.
@@ -325,8 +373,8 @@ From there, your SSH server **won’t be accessible anymore**.
 
 
 ## UFW firewall
-> - Configure OS with UFW (Uncomplicated) FireWall.
-> - Leave only port 4242 open.
+> You have to configure your operating system with the UFW firewall (Uncomplicated FireWall) and thus leave **only
+port 4242 open**.
 - **During eval:**
   - "UFW" program properly installed.
   - working properly.
@@ -396,6 +444,7 @@ You will need to confirm `y` when prompted to delete the rule from your system a
 
 
 ## Strong password policy
+> To set up a strong password policy, you have to comply with the following requirements:
 > - Password has to expire every 30 days.
 > - Minimum number of days allowed before modification of a password will be set to 2.
 > - User has to receive a warning message 7 days before their password expires.
