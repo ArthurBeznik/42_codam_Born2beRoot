@@ -106,6 +106,31 @@ Accept the modifications and writes and it should be good.
   - show partitions of the VM
   - compare output with example given
 
+### Configuration
+Login to your server
+```bash
+ssh -p <port> <user>@<hostname>
+```
+
+Display the current hostname:
+```bash
+hostnamectl
+```
+
+Become root with `su`
+
+To set the hostname to <server_name>, run:
+```bash
+hostnamectl set-hostname <server_name>
+```
+Edit the file `/etc/hosts` and replace all occurences of previous server_name by the new server name: 
+```bash
+vi /etc/hosts
+```
+
+Verify it by running the `hostnamectl` command again.
+
+
 ### Useful links
 - [Change hostname Debian 10 Linux](https://www.cyberciti.biz/faq/how-to-change-hostname-on-debian-10-linux/)
 - [Change hostname Debian 10 Linux](https://www.cyberciti.biz/faq/debian-change-hostname-permanently/)
@@ -492,7 +517,7 @@ To set an expiration period policy, edit:
 sudo vi /etc/login.defs
 ```
 
-Set the values as per your requirement.
+Set the values as is:
 ```
 PASS_MAX_DAYS 30
 PASS_MIN_DAYS 2
@@ -573,6 +598,13 @@ getent group sudo
 <p align=center>
   <img width="597" alt="Screen Shot 2021-10-10 at 5 11 35 PM" src="https://user-images.githubusercontent.com/43698378/136701814-cc671d24-9bd5-4d6f-8d89-bb2c19d4d6e9.png">
 </p>
+
+### Script
+#### Os and kernel version
+```bash
+hostnamectl | grep "Operating System"
+hostnamectl | grep "Kernel"
+```
 
 ## Check some of the subject’s requirements:
 <p align=center>
