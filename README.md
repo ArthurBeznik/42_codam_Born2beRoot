@@ -143,7 +143,7 @@ Enter your root password that you set during installation to get the root prompt
 
 This will add your user to the sudo group.
 
-`adduser <username> sudo`
+`sudo adduser <username> sudo`
 
 After this start a new shell or logout and login again. Try running the commands with sudo now and they will surely work with your own user.
 
@@ -167,8 +167,13 @@ To set it, add the line:
 ``` bash
 Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
+Most of the line should already be there, except for `:/snap/bin`
 
 #### 2. Enable sudo on TTY User Login Session
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Tty_(unix))
+> In computing, tty is a command in Unix and Unix-like operating systems to print the file name of the terminal connected to standard input.
+> tty stands for TeleTYpewriter.
 
 To enable sudo to be invoked from a real tty but not through methods such as cron or cgi-bin scripts, add the line:
 
@@ -182,13 +187,9 @@ By default, sudo logs through syslog(3). However, to specify a custom log file, 
 
 ```bash
 Defaults  logfile="/var/log/sudo/sudo.log"
-```
 
-To log hostname and the four-digit year in the custom log file, use log_host and log_year parameters respectively as follows:
-
-```bash
-Defaults  log_host, log_year, logfile="/var/log/sudo.log"
-```
+Defaults  iolog_dir=/var/log/sudo/
+```sudo
 
 #### 4. Log sudo Command Input/Output
 
@@ -309,21 +310,15 @@ Port 4242
 Make sure to change your port to one that is not reserved for other protocols. Be careful when you change your default SSH port, **you will have to specify it when connecting to it**.
 
 #### 2. Disabling Root Login on your SSH server
-By default, on recent distributions, root login is set to “prohibit-password”.
+> Since the root user is universal for all Linux and Unix systems it was always the preferred bruteforce victim by hackers to access systems. To bruteforce an unprivileged account the hacker must learn the username first and even if succeeding  the attacker stays limited unless using a local exploit.
 
-This option means that all interactive authentication methods are banned, allowing only public keys to be used.
-
-In short, you need to setup SSH keys and to use them in order to connect as root.
-
-However, even if we connect without a password, root login is not recommended : if keys are compromised, your entire host is compromised.
-
-As a consequence, you can set this option to “no” in order to restrict it completely.
-
+By default, on recent distributions, root login is set to “prohibit-password”. This option means that all interactive authentication methods are banned, allowing only public keys to be used. In short, you need to setup SSH keys and to use them in order to connect as root.
 ```bash
 #PermitRootLogin prohibit-password
 
 PermitRootLogin no
 ```
+Save by pressing `esc` and enter `:wq!`.
 
 #### 3. Restarting your SSH server to apply changes
 In order for the changes to be applied, you need to restart your SSH server.
@@ -408,12 +403,17 @@ To enable SSH connections on your host, run the following command:
 ```bash
 sudo ufw allow ssh
 ```
+And to see the existing rules:
+```bash
+sudo ufw status
+```
 
 #### 2. Allow/deny rules
 Allow
 ```bash
 sudo ufw allow <port>/<optional: protocol>
 ```
+
 Delete
 ```bash
 sudo ufw delete <rule_number_here>
