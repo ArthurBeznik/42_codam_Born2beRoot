@@ -148,7 +148,7 @@ port 4242 open**.
 ### [Users, groups, ...](user/README.md#section)
 ---
 
-## Script monitoring <a name="script"></a>
+## Monitoring script <a name="script"></a>
 >- `monitoring.sh` developped in `bash`.
 >- At server startup, the script will display some information on all terminals every 10min (see `wall`), banner is optional, no error must be visible.
 >- Following information must be displayed:
