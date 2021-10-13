@@ -1,4 +1,4 @@
-## `sudo` Installation & Configuration
+## sudo installation & configuration
 ### Installation
 On a fresh Debian install `sudo` does not work by default. You need to add your user to the `sudo` group in order to get the command working.
 
