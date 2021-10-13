@@ -55,9 +55,22 @@ ip addr | grep "link/ether" |
 sudo journalctl _COMM=sudo | grep COMMAND | uniq | wc -l
 ```
 
+#### Configuration
+We need to use a combination of `wall` and `cron` in order for our script to run every 10 min.
+
+```bash
+crontab -e
+```
+And add the following line:
+```bash
+*/10 * * * * bash monitoring.sh >> script.txt | wall script.txt
+```
+This tells the crontab to run a job every 10min.
+
 ### Useful links
 - [Bash shell](https://www.2daygeek.com/bash-shell-script-view-linux-system-information/)
 - [Physical CPU](https://developpaper.com/how-to-view-the-physical-cpu-logical-cpu-and-cpu-number-of-linux-servers/)
 - [vCPU](https://webhostinggeeks.com/howto/how-to-display-the-number-of-processors-vcpu-on-linux-vps/)
 - [Bash](https://medium.com/@david_packman/gathering-linux-system-information-using-bash-3bfaaed7755f)
 - [Wall](https://www.howtoforge.com/linux-wall-command/)
+- [Cron](https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/)
