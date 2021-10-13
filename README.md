@@ -4,13 +4,25 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ***Share some love, star this repo buddy <3***
 
-## General guidelines
+# Table des matières
+1. [General guidelines](#guide)
+2. [VMs](#vm)
+3. [OS](#os)
+4. [Graphical](#graph)
+5. [Encrypted partitions](#encrypt)
+6. [Hostname](#host)
+7. [sudo](#sudo)
+8. [SSH](#ssh)
+9. [UFW](#ufw)
+10. [Password policy](#pass)
+11. [User](#user)
+12. [Monitoring script](#script)
+
+## General guidelines <a name="guide"></a>
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is **mandatory**.
 - You only have to turn in a `signature.txt` file at the root of your repository. You must paste in it the signature of your machine’s virtual disk. Go to Submission and peer-evaluation for more information.
 
-# Mandatory part
-
-## VMs
+## VMs <a name="vm"></a>
 - How do VM work?
 - Purpose?
 
@@ -20,7 +32,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [What is a VM?](https://www.vmware.com/topics/glossary/content/virtual-machine)
 
 
-## OS: Debian
+## OS: Debian <a name="os"></a>
 - Why this OS?
 - Basic differences between Debian & CentOS?
 - Differences between `aptitude` and `apt`?
@@ -34,7 +46,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [Aptitude vs apt](https://www.tecmint.com/difference-between-apt-and-aptitude/#:~:text=Apt%2Dget%20being%20a%20lower,operation%20by%20entering%20required%20commands.)
 - [APPArmor](https://www.howtogeek.com/118222/htg-explains-what-apparmor-is-and-how-it-secures-your-ubuntu-system/)
 
-## No graphical interface
+## No graphical interface <a name="graph"></a>
 > Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
 
 Deselect **Desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
@@ -43,7 +55,7 @@ X.org = debian.org ?
 
 ---
 
-## Encrypted partitions
+## Encrypted partitions <a name="encrypt"></a>
 > You must create **at least 2 encrypted partitions using LVM**. Below is an example of the
 expected partitioning:
 <p align=center>
@@ -54,7 +66,7 @@ Using the command `lsblk` will display the partitions.
 ### [Encrypt partitions with LVM](lvm/README.md#section)
 ---
 
-## Hostname
+## Hostname <a name="host"></a>
 > The hostname of your virtual machine must be your login ending with 42 (e.g., abeznik42).
 - **During eval:**
   - modify hostname, restart machine, hostname should be updated.
@@ -63,7 +75,7 @@ Using the command `lsblk` will display the partitions.
 ### [Changing hostname](hostname/README.md#section)
 ---
 
-## `sudo` strict rules
+## `sudo` strict rules <a name="sudo"></a>
 > To set up a strong configuration for your sudo group, you have to comply with the
 following requirements:
 > - Max 3 attempts on authentication using `sudo` in event of incorrect password.
@@ -82,7 +94,7 @@ following requirements:
 ### [sudo installation & configuration](sudo/README.md#section)
 ---
 
-## SSH service
+## SSH service <a name="ssh"></a>
 > A SSH service will be running on **port 4242 only**. For security reasons, it must **not** be
 possible to connect using SSH as root.
 - **During eval:**
@@ -95,7 +107,7 @@ possible to connect using SSH as root.
 ### [SSH installation & configuration](ssh/README.md#section)
 ---
 
-## UFW firewall
+## UFW firewall <a name="ufw"></a>
 > You have to configure your operating system with the UFW firewall (Uncomplicated FireWall) and thus leave **only
 port 4242 open**.
 - **During eval:**
@@ -109,7 +121,7 @@ port 4242 open**.
 ### [UFW installation & configuration](ufw/README.md#section)
 ---
 
-## Strong password policy
+## Strong password policy <a name="pass"></a>
 > To set up a strong password policy, you have to comply with the following requirements:
 > - Password has to expire every 30 days.
 > - Minimum number of days allowed before modification of a password will be set to 2.
@@ -127,7 +139,7 @@ port 4242 open**.
 ### [Strong password installation & configuration](passwd/README.md#section)
 ---
 
-## User
+## User <a name="user"></a>
 > In addition to the root user, a user with your login as username has to be present. And has to belong to `sudo` and `user42` groups.
 - **During eval:**
   - create new user.
@@ -136,7 +148,7 @@ port 4242 open**.
 ### [Users, groups, ...](user/README.md#section)
 ---
 
-## Script monitoring
+## Script monitoring <a name="script"></a>
 >- `monitoring.sh` developped in `bash`.
 >- At server startup, the script will display some information on all terminals every 10min (see `wall`), banner is optional, no error must be visible.
 >- Following information must be displayed:
