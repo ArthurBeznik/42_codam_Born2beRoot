@@ -154,6 +154,7 @@ following requirements:
     - should see a history of commands used with `sudo`.
   - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
 
+### [sudo](sudo/README.md#section)
 
 ### Install
 On a fresh Debian install `sudo` does not work by default. You need to add your user to the `sudo` group in order to get the command working.
