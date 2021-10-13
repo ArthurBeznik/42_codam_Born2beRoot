@@ -59,3 +59,5 @@ sudo journalctl _COMM=sudo | grep COMMAND | uniq | wc -l
 - [Bash shell](https://www.2daygeek.com/bash-shell-script-view-linux-system-information/)
 - [Physical CPU](https://developpaper.com/how-to-view-the-physical-cpu-logical-cpu-and-cpu-number-of-linux-servers/)
 - [vCPU](https://webhostinggeeks.com/howto/how-to-display-the-number-of-processors-vcpu-on-linux-vps/)
+- [Bash](https://medium.com/@david_packman/gathering-linux-system-information-using-bash-3bfaaed7755f)
+- [Wall](https://www.howtoforge.com/linux-wall-command/)
