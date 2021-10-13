@@ -64,6 +64,8 @@ crontab -e
 And add the following line:
 ```bash
 */10 * * * * bash monitoring.sh >> script.txt | wall script.txt
+or
+*/10 * * * * /root/monitoring.sh
 ```
 This tells the crontab to run a job every 10min.
 
