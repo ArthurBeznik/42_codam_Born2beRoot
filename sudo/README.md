@@ -1,29 +1,10 @@
-## `sudo` strict rules
-> To set up a strong configuration for your sudo group, you have to comply with the
-following requirements:
-> - Max 3 attempts on authentication using `sudo` in event of incorrect password.
-> - Display custom message on error due to incorrect password when using `sudo`.
-> - Archive each action using `sudo`, both inputs and outputs. Log file to be saved in `/var/log/sudo/` folder.
-> - `TTY` mode has to be enabled for security reasons.
-> - For security reasons the paths that can be used by `sudo` must be restricted. Example: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
-- **During eval:**
-  - `sudo` properly installed.
-  - assign new user to the `sudo` group.
-  - explain value and operation of `sudo` using examples of your choice.
-  - verify that `/var/log/sudo/` folder exists and has at least one file.
-    - check the contents of the files in this folder.
-    - should see a history of commands used with `sudo`.
-  - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
-
-
-### Install
+## `sudo` Installation & Configuration
+### Installation
 On a fresh Debian install `sudo` does not work by default. You need to add your user to the `sudo` group in order to get the command working.
 
 #### 1. Get root first
 
-If you are already logged in on another user, use the `su` command.
-
-Enter your root password that you set during installation to get the root prompt.
+If you are already logged in on another user, use the `su` command. Enter your root password that you set during installation to get the root prompt.
 
 #### 2. Add user to the sudo group
 
@@ -31,7 +12,7 @@ This will add your user to the sudo group.
 
 `sudo adduser <username> sudo`
 
-After this start a new shell or logout and login again. Try running the commands with sudo now and they will surely work with your own user.
+After this, start logout and login again. Try running the commands with sudo now and they will work for your user.
 
 Additionally in some cases like the minimal installations of Debian, the sudo program/command itself might not be present. In that case you will also need to install sudo.
 
@@ -39,7 +20,7 @@ Additionally in some cases like the minimal installations of Debian, the sudo pr
 
 ### Configuration
 
-Always edit sudo file using `sudo visudo`.
+***Always edit sudo file using `sudo visudo`.***
 
 #### 1. Set a Secure PATH
 
@@ -53,7 +34,7 @@ To set it, add the line:
 ``` bash
 Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
-Most of the line should already be there, except for `:/snap/bin`
+Most of the line should already be there, except for the very end `:/snap/bin`
 
 #### 2. Enable sudo on TTY User Login Session
 
@@ -110,4 +91,3 @@ Defaults   passwd_tries=3
 - [Adding a user to sudoers](https://devconnected.com/how-to-add-user-to-sudoers-on-ubuntu-20-04/)
 - [Let sudo insult you](https://www.tecmint.com/sudo-insult-when-enter-wrong-password/)
 - [Configs for sudo](https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/)
-
