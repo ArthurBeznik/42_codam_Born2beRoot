@@ -4,19 +4,19 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ***Share some love, star this repo buddy <3***
 
-# Table des matières
-1. [General guidelines](#guide)
-2. [VMs](#vm)
-3. [OS](#os)
-4. [Graphical](#graph)
-5. [Encrypted partitions](#encrypt)
-6. [Hostname](#host)
-7. [sudo](#sudo)
-8. [SSH](#ssh)
-9. [UFW](#ufw)
-10. [Password policy](#pass)
-11. [User](#user)
-12. [Monitoring script](#script)
+# Table of entries
+- [General guidelines](#guide)
+- [VMs](#vm)
+- [OS](#os)
+- [Graphical](#graph)
+- [Encrypted partitions](#encrypt)
+- [Hostname](#host)
+- [sudo](#sudo)
+- [SSH](#ssh)
+- [UFW](#ufw)
+- [Password policy](#pass)
+- [User](#user)
+- [Monitoring script](#script)
 
 ## General guidelines <a name="guide"></a>
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is **mandatory**.
