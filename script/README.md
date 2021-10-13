@@ -76,3 +76,4 @@ This tells the crontab to run a job every 10min.
 - [Bash](https://medium.com/@david_packman/gathering-linux-system-information-using-bash-3bfaaed7755f)
 - [Wall](https://www.howtoforge.com/linux-wall-command/)
 - [Cron](https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/)
+- [Cron](https://www.cyberciti.biz/faq/linux-execute-cron-job-after-system-reboot/)
