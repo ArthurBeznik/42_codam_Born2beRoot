@@ -55,7 +55,7 @@ ip addr | grep "link/ether" |
 sudo journalctl _COMM=sudo | grep COMMAND | uniq | wc -l
 ```
 
-#### Configuration
+### Configuration
 We need to use a combination of `wall` and `cron` in order for our script to run every 10 min.
 
 ```bash
