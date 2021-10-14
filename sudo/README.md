@@ -81,7 +81,21 @@ The default I/O log directory is /var/log/sudo-io, and if there is a session seq
 
 ``` bash
 Defaults   log_input, log_output
-Defaults    iolog_dir=/var/log/sudo/
+Defaults   iolog_dir=/var/log/sudo/
+```
+
+```bash
+Three sudo commands are stored in 3 separate directory. 
+# ls /var/log/sudo/00/00/
+   01  02  03
+
+Each command stores command output in 7 different files. 
+# ls /var/log/sudo/00/00/01/|wc -l
+7
+# ls /var/log/sudo/00/00/02/|wc -l
+7
+# ls /var/log/sudo/00/00/03/|wc -l
+7
 ```
 
 #### 5. Display Custom Message on wrong sudo password
