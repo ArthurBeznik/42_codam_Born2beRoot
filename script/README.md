@@ -3,8 +3,8 @@
 
 #### 1. Os and kernel version
 ```bash
-hostnamectl | grep "Operating System"
-hostnamectl | grep "Kernel"
+hostnamectl | grep "Operating System" | sed 's/Operating System: //' | sed -e 's/[ \t]*//'
+hostnamectl | grep Kernel | sed 's/Kernel: //' | sed -e 's/[ \t]*//'
 ```
 
 #### 2. Physical and virtual processors
