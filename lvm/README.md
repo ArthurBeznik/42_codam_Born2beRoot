@@ -141,7 +141,7 @@ Double click or select a partition (In this case `home`) and configure it approp
   <img width="524" alt="Screen Shot 2021-10-14 at 3 29 18 PM" src="https://user-images.githubusercontent.com/43698378/137327178-38545052-d186-455a-8d87-fb31bb7c6327.png">
 </p>
 
-As the screenshots show, I'm configuring this partition to be an **ext4 filesystem, **mounted at `/home`, and labeled as home**, do the same thing for `root`. For `swap` instead of being an ext4 filesystem, select **swap area**.
+As the screenshots show, I'm configuring this partition to be an **ext4 filesystem, mounted at `/home`, and labeled as home**, do the same thing for `root`. For `swap` instead of being an ext4 filesystem, select **swap area**.
 
 #### Step 13
 Now you are back to the main menu, it should look like this:
