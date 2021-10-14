@@ -30,6 +30,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [THIS IS THE TUTORIAL I FOLLOWED TO INSTALL DEBIAN ON VM](https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/)
 - [What is a VM?](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#overview)
 - [What is a VM?](https://www.vmware.com/topics/glossary/content/virtual-machine)
+---
 
 
 ## OS: Debian <a name="os"></a>
@@ -45,14 +46,6 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [CentOS vs Debian](https://1gbits.com/blog/debian-vs-centos/)
 - [Aptitude vs apt](https://www.tecmint.com/difference-between-apt-and-aptitude/#:~:text=Apt%2Dget%20being%20a%20lower,operation%20by%20entering%20required%20commands.)
 - [APPArmor](https://www.howtogeek.com/118222/htg-explains-what-apparmor-is-and-how-it-secures-your-ubuntu-system/)
-
-## No graphical interface <a name="graph"></a>
-> Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
-
-Deselect **Desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
-
-X.org = debian.org ?
-
 ---
 
 ## Encrypted partitions <a name="encrypt"></a>
@@ -64,6 +57,16 @@ expected partitioning:
 
 Using the command `lsblk` will display the partitions.
 ### [Encrypt partitions with LVM](lvm/README.md#section)
+---
+
+
+## No graphical interface <a name="graph"></a>
+> Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
+
+Deselect **Desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
+
+X.org = debian.org ?
+
 ---
 
 ## Hostname <a name="host"></a>
