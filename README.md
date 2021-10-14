@@ -67,7 +67,7 @@ Using the command `lsblk` will display the partitions.
 ---
 
 ## Hostname <a name="host"></a>
-> The hostname of your virtual machine must be your login ending with 42 (e.g., abeznik42).
+> The hostname of your virtual machine must be your **login ending with 42** (e.g., abeznik42).
 - **During eval:**
   - modify hostname, restart machine, hostname should be updated.
   - show partitions of the VM
@@ -108,7 +108,7 @@ possible to connect using SSH as root.
 ---
 
 ## UFW firewall <a name="ufw"></a>
-> You have to configure your operating system with the UFW firewall (Uncomplicated FireWall) and thus leave **only
+> You have to configure your operating system with the **UFW firewall** (Uncomplicated FireWall) and thus leave **only
 port 4242 open**.
 - **During eval:**
   - "UFW" program properly installed.
