@@ -9,7 +9,7 @@ echo "#Disk Usage: "
 
 echo "#CPU load: "`cat /proc/stat | awk '{printf("%.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1`
 
-echo "#Last boot: "`who -b | sed -e 's:\<system boot\>//g' | sed -e 's/[ \t]*//'`
+echo "#Last boot: "`who -b | sed -e 's/system boot//' | sed -e 's/[ \t]*//'`
 
 echo "#LVM use: "
 
@@ -19,4 +19,4 @@ echo "#User Log: "`who | uniq | wc -l`
 
 echo "#Network: "`hostname -I`
 
-echo "Sudo: "`sudo journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
+echo "Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
