@@ -6,13 +6,18 @@ echo "#CPU physical: "`cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc
 echo "#vCPU: "`cat /proc/cpuinfo | grep processor | wc -l`
 
 echo "#Memory Usage: "`free | grep Mem | awk '{printf("%d/%dMB (%.2f%%)\n", $3, $4, $3/$2 * 100.0}'`
-echo "#Disk Usage: "
+echo "#Disk Usage: MISSING"
 
 echo "#CPU load: "`cat /proc/stat | awk '{printf("%.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1`
 
 echo "#Last boot: "`who -b | sed -e 's/system boot//' | sed -e 's/[ \t]*//'`
 
-echo "#LVM use: "
+LVM=$(cat /etc/fstab | grep "/dev/mapper" | wc -l)
+if [ $LVM -gt 0 ]
+echo "#LVM use: yes"
+else
+echo "#LVM use: no"
+fi
 
 echo "#TCP connections: "`awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}};END{print t}'`
 
