@@ -1,6 +1,6 @@
 ## Encrypt partitions using LVM
 ### Configuration
-Here is how we can create encrypted partitions using LVM, in the Debian installer.
+Here is how we can create encrypted partitions using LVM, in the Debian graphical installer.
 
 #### Step 1
 Once reaching the partition disks menu. Select **Manual**
