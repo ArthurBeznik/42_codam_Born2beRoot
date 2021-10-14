@@ -67,7 +67,7 @@ And add the following line:
 or
 */10 * * * * /root/monitoring.sh
 or
-*/10 * * * * /usr/bin/sh /root/monitoring.sh > inf.txt | wall inf.txt
+*/10 * * * * /root/monitoring.sh > /root/inf.txt | wall /root/inf.txt THIS WORKS
 ```
 This tells the crontab to run a job every 10min.
 
