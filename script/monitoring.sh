@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo "#Architecture: "`hostnamectl | grep "Operating System" | sed 's/Operating System: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Kernel | sed 's/Kernel: //' | sed -e 's/[ \t]*//'`
+echo "#Architecture: "`hostnamectl | grep "Operating System" | sed 's/Operating System: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Kernel | sed 's/Kernel: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Architecture: //' | sed -e 's/[ \t]*//'`
+
 echo "#CPU physical: "`cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l`
 echo "#vCPU: "`cat /proc/cpuinfo | grep processor | wc -l`
 
@@ -17,6 +18,6 @@ echo "#TCP connections: "`awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}
 
 echo "#User Log: "`who | uniq | wc -l`
 
-echo "#Network: "`hostname -I`
+echo "#Network: IP "`hostname -I`  `ip addr | grep "link/ether" | cut -c 1,16- | cut -c -18,19`
 
 echo "Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
