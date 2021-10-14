@@ -48,15 +48,30 @@ To enable sudo to be invoked from a real tty but not through methods such as cro
 Defaults  requiretty 
 ```
 
-#### 3. Create a sudo Log File
+#### 3. Change default sudo Log File
 
-By default, sudo logs through syslog(3). However, to specify a custom log file, use the logfile parameter like so:
+By default, sudo logs through syslog(3). However, to specify a custom log file, add the following line:
 
 ```bash
-Defaults  logfile="/var/log/sudo/sudo.log"
-
-Defaults  iolog_dir=/var/log/sudo/
+Defaults  syslog=local1
 ```
+Save and close the file. `CTRL+X` followed by `Y`.
+
+Next, edit `/etc/rsyslog.conf`
+```bash
+sudo nano /etc/rsyslog.conf
+```
+And add the following line before the `auth,authpriv.*;local1.none` line:
+```bash
+local1.*  /var/log/sudo/sudo.log
+```
+Save and close the file
+
+Restart `rsyslog` service to take effect the changes:
+```bash
+sudo systemctl restart rsyslog
+```
+From now on, all sudo attempts will be logged in /var/log/sudo/sudo.log file.
 
 #### 4. Log sudo Command Input/Output
 
@@ -66,6 +81,7 @@ The default I/O log directory is /var/log/sudo-io, and if there is a session seq
 
 ``` bash
 Defaults   log_input, log_output
+Defaults    iolog_dir=/var/log/sudo/
 ```
 
 #### 5. Display Custom Message on wrong sudo password
