@@ -149,7 +149,7 @@ Now you are back to the main menu, it should look like this:
 <img width="524" alt="Screen Shot 2021-10-14 at 3 33 51 PM" src="https://user-images.githubusercontent.com/43698378/137327932-0245f563-d352-4d39-8995-646aca3d0af2.png">
 </p>
 
-Select **Finish partitioning and write changes to disk** and you're ***voila***!
+Select **Finish partitioning and write changes to disk** and ***voila***!
 
 ### Useful links
 - [Manually partition Debian](https://unix.stackexchange.com/questions/577379/how-can-i-install-debian-with-full-disk-encryption-and-a-custom-sized-swapfile)
