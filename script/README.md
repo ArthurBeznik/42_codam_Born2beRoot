@@ -15,13 +15,13 @@ cat /proc/cpuinfo | grep processor | wc -l
 
 #### 3. Memory/disk usage
 ```bash
-free | grep Mem | awk '{printf("Memory usage: %d/%dMB (%.2f%%)\n", $3, $4, $3/$2 * 100.0}'
+free | grep Mem | awk '{printf("%d/%dMB (%.2f%%)\n", $3, $4, $3/$2 * 100.0}'
 df -h ?
 ```
 
 #### 4. CPU load
 ```bash
-cat /proc/stat | awk '{printf("CPU load: %.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1
+cat /proc/stat | awk '{printf("%.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1
 ```
 
 #### 5. Last boot
