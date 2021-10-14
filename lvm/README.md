@@ -105,6 +105,52 @@ Then select the device for the new volume group, which is the encryted one.
   <img width="524" alt="Screen Shot 2021-10-14 at 1 56 13 PM" src="https://user-images.githubusercontent.com/43698378/137312709-d9564740-9e61-4720-8739-1238058bc50a.png">
 </p>
 
+#### Step 11
+Now that we have configured a physical volume group, we need to create **logical volumes**.
+<p align=center>
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 14 30 PM" src="https://user-images.githubusercontent.com/43698378/137324574-f5464940-1a10-4cdd-8101-587090a48e4c.png">
+</p>
+
+When creating a logical volume, you need to select a volume group, give the logical volume a name, and size. This is going to be a **boot** partition so I have named it and sized it according to the subject.
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-14 at 3 16 38 PM" src="https://user-images.githubusercontent.com/43698378/137324900-3269ddee-989c-49d5-a8bf-3054fb35cdb2.png">
+<img width="524" alt="Screen Shot 2021-10-14 at 3 17 59 PM" src="https://user-images.githubusercontent.com/43698378/137325204-d702b58f-928f-472f-878e-1c2041665e72.png">
+<img width="524" alt="Screen Shot 2021-10-14 at 3 19 13 PM" src="https://user-images.githubusercontent.com/43698378/137325314-41b888c6-3005-4350-b973-0feb55733cc5.png">
+</p>
+
+You will have to do this step 3 times in order to have `root` (2.8G), `swap_1` (976M) and `home` (3.8G). When that is done, by selecting **Display configuration details**, you should have as follows:
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-14 at 3 22 49 PM" src="https://user-images.githubusercontent.com/43698378/137325963-d76ef1e3-b1f1-4fc6-a6cf-e3f968489683.png">
+</p>
+
+And select **Finish**.
+
+#### Step 12
+Now that we have configured LVM we need to actually configure the partitions on the drive. Back on the main partition disks menu, it should like something like this:
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-14 at 3 24 33 PM" src="https://user-images.githubusercontent.com/43698378/137326318-96a6b1d5-8a13-4a29-a8e6-92aac90c63b9.png">
+</p>
+
+Double click or select a partition (In this case `home`) and configure it appropriately.
+<p align=center>
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 25 43 PM" src="https://user-images.githubusercontent.com/43698378/137326569-555507b8-26d6-4635-9418-260c13821137.png">
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 26 34 PM" src="https://user-images.githubusercontent.com/43698378/137326706-0e72042c-294d-41f4-b950-880d18b3458b.png">
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 27 13 PM" src="https://user-images.githubusercontent.com/43698378/137326806-ece2b6ee-8670-4a28-98f0-0533ddffee6a.png">
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 27 47 PM" src="https://user-images.githubusercontent.com/43698378/137326889-375ea0ef-fc4d-4fac-83bc-3a7bdaa22001.png">
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 28 10 PM" src="https://user-images.githubusercontent.com/43698378/137326954-7ad795b3-2436-4352-a7f5-191f4cd010d4.png">
+  <img width="524" alt="Screen Shot 2021-10-14 at 3 29 18 PM" src="https://user-images.githubusercontent.com/43698378/137327178-38545052-d186-455a-8d87-fb31bb7c6327.png">
+</p>
+
+As the screenshots show, I'm configuring this partition to be an **ext4 filesystem, **mounted at `/home`, and labeled as home**, do the same thing for `root`. For `swap` instead of being an ext4 filesystem, select **swap area**.
+
+#### Step 13
+Now you are back to the main menu, it should look like this:
+<p align=center>
+<img width="524" alt="Screen Shot 2021-10-14 at 3 33 51 PM" src="https://user-images.githubusercontent.com/43698378/137327932-0245f563-d352-4d39-8995-646aca3d0af2.png">
+</p>
+
+Select **Finish partitioning and write changes to disk** and you're done!
+
 ### Useful links
 - [Manually partition Debian](https://unix.stackexchange.com/questions/577379/how-can-i-install-debian-with-full-disk-encryption-and-a-custom-sized-swapfile)
 - [Debian - partitioning](https://www.debian.org/releases/buster//amd64/ch06s03.en.html#di-partition)
