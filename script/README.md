@@ -26,7 +26,7 @@ cat /proc/stat | awk '{printf("%.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1
 
 #### 5. Last boot
 ```bash
-who -b | sed -e 's:\<system boot\>//g' | sed -e 's/[ \t]*//'
+who -b | sed -e 's/system boot//' | sed -e 's/[ \t]*//'
 ```
 
 #### 6. LVM use
