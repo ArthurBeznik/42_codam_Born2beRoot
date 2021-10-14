@@ -22,7 +22,7 @@ Read this about partitioning from debian.org:
 > When using encrypted LVM, the installer will also automatically **erase the disk by writing random data to it**. This further improves security (as it makes it impossible to tell which parts of the disk are in use and also makes sure that any traces of previous installations are erased), but may take some time depending on the size of your disk.
 
 #### Step 3
-We now have to create a partition dedicated to `/boot`. Go on the **FREE SPACE**.
+We now have to create a partition dedicated to `/boot`, otherwise **we won't be able to boot**, obviously. Go on the **FREE SPACE**.
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-14 at 1 21 59 PM" src="https://user-images.githubusercontent.com/43698378/137308142-6098806e-ae78-4cab-9dca-9a68895ccf16.png">
 </p>
