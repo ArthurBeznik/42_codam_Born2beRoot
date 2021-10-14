@@ -8,9 +8,9 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [General guidelines](#guide)
 - [VMs](#vm)
 - [OS](#os)
-- [Graphical](#graph)
-- [Encrypted partitions](#encrypt)
 - [Hostname](#host)
+- [Encrypted partitions](#encrypt)
+- [Graphical](#graph)
 - [sudo](#sudo)
 - [SSH](#ssh)
 - [UFW](#ufw)
@@ -48,6 +48,15 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [APPArmor](https://www.howtogeek.com/118222/htg-explains-what-apparmor-is-and-how-it-secures-your-ubuntu-system/)
 ---
 
+## Hostname <a name="host"></a>
+> The hostname of your virtual machine must be your **login ending with 42** (e.g., abeznik42).
+- **During eval:**
+  - modify hostname, restart machine, hostname should be updated.
+  - show partitions of the VM
+  - compare output with example given
+### [Changing hostname](hostname/README.md#section)
+---
+
 ## Encrypted partitions <a name="encrypt"></a>
 > You must create **at least 2 encrypted partitions using LVM**. Below is an example of the
 expected partitioning:
@@ -67,15 +76,6 @@ Deselect **Desktop environment** and **GNOME** from **software selection** durin
 
 X.org = debian.org ?
 
----
-
-## Hostname <a name="host"></a>
-> The hostname of your virtual machine must be your **login ending with 42** (e.g., abeznik42).
-- **During eval:**
-  - modify hostname, restart machine, hostname should be updated.
-  - show partitions of the VM
-  - compare output with example given
-### [Changing hostname](hostname/README.md#section)
 ---
 
 ## `sudo` strict rules <a name="sudo"></a>
