@@ -26,4 +26,4 @@ echo "#User Log: "`who | uniq | wc -l`
 
 echo "#Network: IP "`hostname -I`  `ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'`
 
-echo "Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
+echo "#Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
