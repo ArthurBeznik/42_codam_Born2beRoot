@@ -57,7 +57,7 @@ apt-get install net-tools
 ```
 
 ```bash
-hostname -I` "("`ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'`")"
+hostname -I` "("`ip address | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..' | head -1`")"
 ```
 
 #### 10. Sudo
