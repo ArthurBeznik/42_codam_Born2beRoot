@@ -65,7 +65,7 @@ hostname -I` "("`ip address | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..
 
 #### 10. Sudo
 ```bash
-journalctl _COMM=sudo | grep COMMAND | uniq | wc -l
+`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`" cmd"
 ```
 
 ### Configuration
@@ -80,7 +80,7 @@ And add the following line:
 or
 */10 * * * * /root/monitoring.sh
 or
-*/10 * * * * /root/monitoring.sh > /root/inf.txt | wall /root/inf.txt THIS WORKS
+*/10 * * * * /root/monitoring.sh > /root/inf.txt | wall /root/inf.txt 
 ```
 This tells the crontab to run a job every 10min.
 ```bash
