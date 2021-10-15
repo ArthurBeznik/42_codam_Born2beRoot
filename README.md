@@ -17,6 +17,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [Password policy](#pass)
 - [User](#user)
 - [APPArmor](#apparmor)
+- [Useful Commands](#cmd)
 - [Monitoring script](#script)
 
 ## General guidelines <a name="guide"></a>
@@ -155,6 +156,10 @@ port 4242 open**.
 ### [APPArmor set up](apparmor/README.md#section)
 ---
 
+
+## Useful Commands <a name="cmd"></a>
+### [Here are a few useful commands, cheers](cmd/README.md#section)
+---
 
 ## Monitoring script <a name="script"></a>
 >- `monitoring.sh` developped in `bash`.
