@@ -14,3 +14,9 @@ su
 ```bash
 who
 ```
+
+### Server related
+- Restart
+```bash
+ssh -t -p 4242 <user_name>@<server_name> 'sudo reboot'
+```
