@@ -24,6 +24,6 @@ echo "#TCP connections: "`awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}
 
 echo "#User Log: "`who | uniq | wc -l`
 
-echo "#Network: IP "`hostname -I`  `ip -a | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..' | head -1`
+echo "#Network: IP "`hostname -I`  `ip address | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..' | head -1`
 
-echo "#Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
+echo "#Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l` " cmd"
