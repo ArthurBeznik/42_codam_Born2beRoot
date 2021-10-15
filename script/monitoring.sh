@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "#Architecture: "`hostnamectl | grep "Operating System" | sed 's/Operating System: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Kernel | sed 's/Kernel: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Architecture: //' | sed -e 's/[ \t]*//'`
+echo "#Architecture: "`hostnamectl | grep "Operating System" | sed 's/Operating System: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Kernel | sed 's/Kernel: //' | sed -e 's/[ \t]*//'` `hostnamectl | grep Architecture | sed 's/Architecture: //' | sed -e 's/[ \t]*//'`
 
 echo "#CPU physical: "`cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l`
 echo "#vCPU: "`cat /proc/cpuinfo | grep processor | wc -l`
