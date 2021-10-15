@@ -23,6 +23,6 @@ echo "#TCP connections: "`awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}
 
 echo "#User Log: "`who | uniq | wc -l`
 
-echo "#Network: IP "`hostname -I`  `ip addr | grep "link/ether" | cut -c 1,16- | cut -c -18,19`
+echo "#Network: IP "`hostname -I`  `ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'`
 
 echo "Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`
