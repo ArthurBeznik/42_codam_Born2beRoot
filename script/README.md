@@ -15,7 +15,7 @@ cat /proc/cpuinfo | grep processor | wc -l
 
 #### 3. Memory/disk usage
 ```bash
-free | grep Mem | awk '{printf("%d/%dMB (%.2f%%)\n", $3, $4, $3/$2 * 100.0}'
+free -m | grep Mem | awk '{printf("%d/%dMB (%.2f%%)\n", $3, $2, $3/$2 * 100.0}'
 df -h ?
 ```
 
