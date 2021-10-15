@@ -152,7 +152,7 @@ port 4242 open**.
 ---
 
 ## APPArmor <a name="apparmor"></a>
-### [APPArmor](apparmor/README.md#section)
+### [APPArmor set up](apparmor/README.md#section)
 ---
 
 
