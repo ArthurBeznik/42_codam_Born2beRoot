@@ -41,6 +41,7 @@ fi
 ```
 
 #### 7. TCP connections
+You will need to install `net-tools` package to use `netstat`
 ```bash
 awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}};END{print t}'
 or
