@@ -1,3 +1,5 @@
+## APPArmor
+### Configuration
 If you are using Debian 10 "Buster" or newer, AppArmor is enabled by default so you dont need to install it, but in case it is not, here's the command:
 ```bash
 apt install apparmor apparmor-utils auditd
