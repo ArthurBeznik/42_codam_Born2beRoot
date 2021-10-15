@@ -6,7 +6,7 @@ echo "#CPU physical: "`cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc
 echo "#vCPU: "`cat /proc/cpuinfo | grep processor | wc -l`
 
 echo "#Memory Usage: "`free | grep Mem | awk '{printf("%d/%dMB (%.2f%%)\n", $3, $4, $3/$2 * 100.0}'`
-echo "#Disk Usage: MISSING"
+echo "#Disk Usage: "`df -h | awk 'NR==2{printf("%s/%s (%d%%)\n", $3, $2, $5)}'`
 
 echo "#CPU load: "`cat /proc/stat | awk '{printf("%.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1`
 
@@ -20,10 +20,10 @@ else
 echo "#LVM use: no"
 fi
 
-echo "#TCP connections: "`awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}};END{print t}'`
+echo "#TCP connections: "`awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}};END{print t}'`" ESTABLISHED"
 
 echo "#User Log: "`who | uniq | wc -l`
 
-echo "#Network: IP "`hostname -I`  `ip address | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..' | head -1`
+echo "#Network: IP "`hostname -I` "("`ip address | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..' | head -1`")"
 
 echo "#Sudo: "`journalctl _COMM=sudo | grep COMMAND | uniq | wc -l` " cmd"
