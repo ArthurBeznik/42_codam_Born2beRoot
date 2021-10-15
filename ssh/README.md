@@ -59,7 +59,7 @@ Edit the config file with
 ```bash
 sudo vi /etc/ssh/sshd_config
 ```
-**Warning:** search how to use `sudo vi`, it's **VERY** confusing to use!
+**Warning:** search how to use `sudo vi`, it's **VERY** confusing to use! Or just use `sudo nano`, nice interface, way easier to use.
 
 Look for the following line.
 ```bash
