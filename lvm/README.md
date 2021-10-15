@@ -95,9 +95,9 @@ Select **Configure the Logical Volume Manager**.
 You will be asked to write the current partitioning scheme before you continue. Agree and continue.
 
 #### Step 10
-Now we are at the LVM configuration menu. Select **Create Volume group** and continue. At the next screen you will be prompted to name your new volume group. Subject's example shows `wil--vg`, I will therefore call mine `abeznik--vg`.
+Now we are at the LVM configuration menu. Select **Create Volume group** and continue. At the next screen you will be prompted to name your new volume group. Subject's example shows `wil--vg`, I will therefore call mine `abeznik`, `--vg` gets added by default.
 <p align=center>
-<img width="524" alt="Screen Shot 2021-10-14 at 1 52 38 PM" src="https://user-images.githubusercontent.com/43698378/137312392-113c5a50-c48b-4460-9457-1cae9ae539af.png">
+<img width="524" alt="Screen Shot 2021-10-15 at 12 45 16 PM" src="https://user-images.githubusercontent.com/43698378/137475511-e43d210a-9555-4dea-b4d0-c241153e3132.png">
 </p>
 
 Then select the device for the new volume group, which is the encryted one.
@@ -113,7 +113,7 @@ Now that we have configured a physical volume group, we need to create **logical
 
 When creating a logical volume, you need to select a volume group, give the logical volume a name, and size. This is going to be a **boot** partition so I have named it and sized it according to the subject.
 <p align=center>
-<img width="524" alt="Screen Shot 2021-10-14 at 3 16 38 PM" src="https://user-images.githubusercontent.com/43698378/137324900-3269ddee-989c-49d5-a8bf-3054fb35cdb2.png">
+<img width="524" alt="Screen Shot 2021-10-15 at 12 46 01 PM" src="https://user-images.githubusercontent.com/43698378/137476021-8dd7eb27-55db-4f56-8fa9-94ea2395353b.png">
 <img width="524" alt="Screen Shot 2021-10-14 at 3 17 59 PM" src="https://user-images.githubusercontent.com/43698378/137325204-d702b58f-928f-472f-878e-1c2041665e72.png">
 <img width="524" alt="Screen Shot 2021-10-14 at 3 19 13 PM" src="https://user-images.githubusercontent.com/43698378/137325314-41b888c6-3005-4350-b973-0feb55733cc5.png">
 </p>
