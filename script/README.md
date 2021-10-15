@@ -45,9 +45,13 @@ who | uniq | wc -l
 ```
 
 #### 9. Network IP
+You will need to install `net-tools` package to use `ifconfig`
 ```bash
-hostname -I
-ip addr | grep "link/ether" |
+apt-get install net-tools
+```
+
+```bash
+hostname -I`  `ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'
 ```
 
 #### 10. Sudo
