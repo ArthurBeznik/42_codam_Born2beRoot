@@ -62,7 +62,7 @@ hostname -I` "("`ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'`")"
 
 #### 10. Sudo
 ```bash
-sudo journalctl _COMM=sudo | grep COMMAND | uniq | wc -l
+journalctl _COMM=sudo | grep COMMAND | uniq | wc -l
 ```
 
 ### Configuration
