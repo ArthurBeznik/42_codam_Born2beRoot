@@ -151,7 +151,7 @@ port 4242 open**.
 ### [Users, groups, ...](user/README.md#section)
 ---
 
-## APPArmor <a name="aaparmor"></a>
+## APPArmor <a name="apparmor"></a>
 ### [APPArmor](apparmor/README.md#section)
 ---
 
