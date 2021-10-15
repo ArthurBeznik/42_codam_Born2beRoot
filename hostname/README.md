@@ -18,7 +18,7 @@ hostnamectl set-hostname <server_name>
 ```
 Edit the file `/etc/hosts` and replace all occurences of previous server_name by the new server name: 
 ```bash
-vi /etc/hosts
+nano /etc/hosts
 ```
 
 Verify it by running the `hostnamectl` command again.
