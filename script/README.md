@@ -43,6 +43,8 @@ fi
 #### 7. TCP connections
 ```bash
 awk </proc/net/tcp 'BEGIN{t=0};{if ($4 == "01") {t++;}};END{print t}'
+or
+netstat -ant | grep ESTABLISHED | wc -l
 ```
 
 #### 8. User log
