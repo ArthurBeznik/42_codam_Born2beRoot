@@ -31,7 +31,13 @@ who -b | sed -e 's/system boot//' | sed -e 's/[ \t]*//'
 
 #### 6. LVM use
 ```bash
-lvscan ?
+LVM=$( cat /etc/fstab | grep "/dev/mapper" | wc -l )
+if [ $LVM -gt 0 ]
+then
+echo "#LVM use: yes"
+else
+echo "#LVM use: no"
+fi
 ```
 
 #### 7. TCP connections
@@ -51,7 +57,7 @@ apt-get install net-tools
 ```
 
 ```bash
-hostname -I`  `ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'
+hostname -I` "("`ifconfig -a | grep -ioE '([a-z0-9]{2}:){5}..'`")"
 ```
 
 #### 10. Sudo
