@@ -83,6 +83,13 @@ or
 */10 * * * * /root/monitoring.sh > /root/inf.txt | wall /root/inf.txt THIS WORKS
 ```
 This tells the crontab to run a job every 10min.
+```bash
+sudo systemctl enable cron.service
+sudo systemctl start cron.service
+sudo systemctl stop cron.service
+sudo systemctl restart cron.service
+sudo systemctl status cron.service
+```
 
 ### Useful links
 - [Bash shell](https://www.2daygeek.com/bash-shell-script-view-linux-system-information/)
