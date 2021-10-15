@@ -14,6 +14,7 @@ echo "#Last boot: "`who -b | sed -e 's/system boot//' | sed -e 's/[ \t]*//'`
 
 LVM=$(cat /etc/fstab | grep "/dev/mapper" | wc -l)
 if [ $LVM -gt 0 ]
+then
 echo "#LVM use: yes"
 else
 echo "#LVM use: no"
