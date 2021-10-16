@@ -111,7 +111,7 @@ Now that we have configured a physical volume group, we need to create **logical
   <img width="524" alt="Screen Shot 2021-10-14 at 3 14 30 PM" src="https://user-images.githubusercontent.com/43698378/137324574-f5464940-1a10-4cdd-8101-587090a48e4c.png">
 </p>
 
-When creating a logical volume, you need to select a volume group, give the logical volume a name, and size. This is going to be a **boot** partition so I have named it and sized it according to the subject.
+When creating a logical volume, you need to select a volume group, give the logical volume a name, and size. This is going to be a **root** partition so I have named it and sized it according to the subject.
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-15 at 12 46 01 PM" src="https://user-images.githubusercontent.com/43698378/137476021-8dd7eb27-55db-4f56-8fa9-94ea2395353b.png">
 <img width="524" alt="Screen Shot 2021-10-14 at 3 17 59 PM" src="https://user-images.githubusercontent.com/43698378/137325204-d702b58f-928f-472f-878e-1c2041665e72.png">
