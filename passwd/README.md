@@ -39,6 +39,15 @@ PASS_WARN_AGE 7
 ```
 
 ### Commands
+- Change password of active user
+```bash
+passwd
+```
+- Change password of given user
+```bash
+passwd <user_name>
+```
+
 - Display password of existing user
 ```bash
 chage -l <user_name>
