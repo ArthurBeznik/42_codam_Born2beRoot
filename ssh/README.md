@@ -80,7 +80,7 @@ By default, on recent distributions, root login is set to â€œprohibit-passwordâ€
 
 PermitRootLogin no
 ```
-Save by pressing `esc` and enter `:wq!`.
+Save by pressing `CTRL+X` then `Y` and `return`.
 
 #### 3. Restarting your SSH server to apply changes
 In order for the changes to be applied, you need to restart your SSH server.
