@@ -28,7 +28,7 @@ minlen=10 difok=7 ucredit=1 dcredit=1 reject_username maxrepeat=3
 
 To set an expiration period policy, edit:
 ```bash
-sudo vi /etc/login.defs
+sudo nano /etc/login.defs
 ```
 
 Set the values as is:
