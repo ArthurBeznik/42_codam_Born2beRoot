@@ -38,6 +38,23 @@ PASS_MIN_DAYS 2
 PASS_WARN_AGE 7
 ```
 
+**WARNING:** these settings only apply to the newly created users. We therefore have to apply these changes to the existing users, using commands.
+
+- Password expiration date
+```bash
+chage -E <days> <user_name>
+```
+
+- Minimum number of days between password change
+```bash
+chage -m <days> <user_name>
+```
+
+- Warning before password expires
+```bash
+chage -W <days> <user_name>
+```
+
 ### Commands
 - Change password of active user
 ```bash
