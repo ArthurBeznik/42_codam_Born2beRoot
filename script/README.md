@@ -5,6 +5,7 @@
 ```bash
 hostnamectl | grep "Operating System" | sed 's/Operating System: //' | sed -e 's/[ \t]*//'
 hostnamectl | grep Kernel | sed 's/Kernel: //' | sed -e 's/[ \t]*//'
+hostnamectl | grep Architecture | sed 's/Architecture: //' | sed -e 's/[ \t]*//'
 ```
 
 #### 2. Physical and virtual processors
