@@ -69,7 +69,7 @@ hostname -I` "("`ip address | grep "link/ether" | grep -ioE '([a-z0-9]{2}:){5}..
 `journalctl _COMM=sudo | grep COMMAND | uniq | wc -l`" cmd"
 ```
 
-### Configuration
+### Cron
 We need to use a combination of `wall` and `cron` in order for our script to run every 10 min.
 
 ```bash
