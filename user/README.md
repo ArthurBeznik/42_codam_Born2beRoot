@@ -56,5 +56,11 @@ or
 userdel -r <user_name> to remove the user's home folder and email folder.
 ```
 
+If an error saying that user is being used by process xx, run
+```bash
+pkill -9 <pid>
+```
+pid = process id
+
 ### Useful links
 - [Create a sudo user Debian](https://phoenixnap.com/kb/create-a-sudo-user-on-debian)
