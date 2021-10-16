@@ -40,6 +40,11 @@ PASS_WARN_AGE 7
 
 **WARNING:** these settings only apply to the newly created users. We therefore have to apply these changes to the existing users, using commands.
 
+- chage interactive mode to set all options
+```bash
+chage <user_name>
+```
+
 - Password expiration date
 ```bash
 chage -E <days> <user_name>
