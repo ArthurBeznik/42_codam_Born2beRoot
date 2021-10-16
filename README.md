@@ -68,6 +68,7 @@ expected partitioning:
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-10 at 4 03 40 PM" src="https://user-images.githubusercontent.com/43698378/136699027-5a77000c-c0f0-4b78-8919-98be71d3e2b9.png">
 </p>
+
 - **During eval:**
   - Show the partitions for this virtual machine.
     - Compare the output with the example given in the subject. Please note: if bonuses, refer to the bonus example.
