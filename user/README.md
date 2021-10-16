@@ -19,6 +19,8 @@ groupadd <groupname>
 
 To list all groups, run
 ```bash
+getent group
+or
 cat /etc/group
 ```
 
