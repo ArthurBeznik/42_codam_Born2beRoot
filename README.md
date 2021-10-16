@@ -26,8 +26,8 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ## VMs <a name="vm"></a>
 - **During eval:**
-The student being evaluated should explain to you simply:
-- How a virtual machine works.
+Explain simply:
+  - How a virtual machine works.
   - The purpose of virtual machines.
 
 ### Useful links
@@ -39,7 +39,7 @@ The student being evaluated should explain to you simply:
 
 ## OS: Debian <a name="os"></a>
 - **During eval:**
-The student being evaluated should explain to you simply:
+Explain simply:
   - Their choice of operating system. 
   - The basic differences between CentOS and Debian.
   - Debian: the difference between aptitude and apt, and what APPArmor is.
@@ -56,9 +56,9 @@ The student being evaluated should explain to you simply:
 ## Hostname <a name="host"></a>
 > The hostname of your virtual machine must be your **login ending with 42** (e.g., abeznik42).
 - **During eval:**
-  - modify hostname, restart machine, hostname should be updated.
-  - show partitions of the VM
-  - compare output with example given
+  - Check that the hostname of the machine is correctly formatted as follows: login42 (login of the student being evaluated).
+  - Modify this hostname by replacing the login with evaluator's login, then restart the machine. If on restart, the hostname has not been updated, the evaluation stops here.
+  - You can now restore the machine to the original hostname.
 ### [Changing hostname](hostname/README.md#section)
 ---
 
@@ -68,25 +68,25 @@ expected partitioning:
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-10 at 4 03 40 PM" src="https://user-images.githubusercontent.com/43698378/136699027-5a77000c-c0f0-4b78-8919-98be71d3e2b9.png">
 </p>
+- **During eval:**
+  - Show the partitions for this virtual machine.
+    - Compare the output with the example given in the subject. Please note: if bonuses, refer to the bonus example.
+  - Give a brief explanation of how LVM works and what it is all about.
 
 Using the command `lsblk` will display the partitions.
 ### [Encrypt partitions with LVM](lvm/README.md#section)
 ---
-
 
 ## No graphical interface <a name="graph"></a>
 > Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
 - **During eval:**
   - Ensure that the machine does not have a graphical environment at launch.
 
-
 Deselect **Desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
-
-X.org = debian.org ?
 
 ---
 
-## `sudo` strict rules <a name="sudo"></a>
+## `sudo` <a name="sudo"></a>
 > To set up a strong configuration for your sudo group, you have to comply with the following requirements:
 > - Authentication using sudo has to be limited to 3 attempts in the event of an incorrect password.
 > - A custom message of your choice has to be displayed if an error due to a wrong password occurs when using sudo.
@@ -94,13 +94,13 @@ X.org = debian.org ?
 > - The TTY mode has to be enabled for security reasons.
 > - For security reasons the paths that can be used by `sudo` must be restricted. Example: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
 - **During eval:**
-  - `sudo` properly installed.
-  - assign new user to the `sudo` group.
-  - explain value and operation of `sudo` using examples of your choice.
-  - verify that `/var/log/sudo/` folder exists and has at least one file.
-    - check the contents of the files in this folder.
-    - should see a history of commands used with `sudo`.
-  - run command via `sudo` and see if the files in `/var/log/sudo/` folder have been updated.
+  - Check that the "sudo" program is properly installed on the virtual machine.
+  - Show assigning new user to the "sudo" group.
+  - The subject imposes strict rules for sudo. First explain the value and operation of sudo using examples.
+  - Show the implementation of the rules imposed by the subject.
+  - Verify that the "/var/log/sudo/" folder exists and has at least one file.
+    - Check the contents of the files in this folder, You should see a history of the commands used with sudo.
+  - Run a command via sudo. See if the file(s) in the "/var/log/sudo/" folder have been updated.
 ### [sudo installation & configuration](sudo/README.md#section)
 ---
 
@@ -108,10 +108,11 @@ X.org = debian.org ?
 > A SSH service will be running on **port 4242 only**. For security reasons, it must **not** be
 possible to connect using SSH as root.
 - **During eval:**
-  - SSH service properly installed.
-  - working properly.
-  - explain what SSH is and the value using it.
-  - use SSH in order to log in with the newly created user.
+  - Check that the SSH service is properly installed on the virtual machine.
+  - Check that it is working properly.
+  - Explain to you basically what SSH is and the value of using it
+  - Verify that the SSH service only uses port 4242.
+  - Use SSH in order to log in with the newly created user.
     - you can use a key or a simple password.
     - make sure you cannot use SSH with the "root" user.
 ### [SSH installation & configuration](ssh/README.md#section)
@@ -121,13 +122,12 @@ possible to connect using SSH as root.
 > You have to configure your operating system with the **UFW firewall** (Uncomplicated FireWall) and thus leave **only
 port 4242 open**.
 - **During eval:**
-  - "UFW" program properly installed.
-  - working properly.
-  - explain what UFW is and the value using it.
-  - list active rules in UFW, a rule must exist for port 4242.
-  - add new rule to open port 8080.
-    - check that is has been added by listing the active rules.
-  - delete new rule.
+  - Check that the "UFW" program is properly installed on the virtual machine.
+  - Check that it is working properly.
+  - Explain to you basically what UFW is and the value of using it.
+  - List the active rules in UFW. A rule must exist for port 4242.
+  - Add a new rule to open port 8080. Check that this one has been added by listing the active rules.
+  - Finally, delete this new rule with the help of the student being evaluated.
 ### [UFW installation & configuration](ufw/README.md#section)
 ---
 
@@ -144,17 +144,23 @@ port 4242 open**.
 >   - **does not apply to root password**: have at least 7 character that are **not** part of the former password
 >   - **does apply to root password**: after setting up config files, you will have to change all the passwords of the acounts present on the VM.
   - **During eval:**
-     - explain advantages of this password policy.
-     - explain advantages and disadvantages of its implementation.
+     - Explain advantages of this password policy.
+     - Explain advantages and disadvantages of its implementation.
 ### [Strong password installation & configuration](passwd/README.md#section)
 ---
 
 ## User <a name="user"></a>
 > In addition to the root user, a user with your login as username has to be present. And has to belong to `sudo` and `user42` groups.
 - **During eval:**
-  - create new user.
-  - assign password of choice (respecting rules) + explain how these rules were set up.
-  - create a group and assign new user to it.
+  - A user with the login of the student being evaluated has to be already present on the virtual machine.
+    - Check that it has been added and that it belongs to the "sudo" and "user42" groups.
+  - Make sure the rules imposed in the subject concerning the password policy have been put in place by following the following steps.
+    - Create new user.
+    - Assign password of choice (respecting rules) and explain how these rules were set up. (there should be one or two modified files)
+    - Create a group named "evaluating" and assign it to this user. 
+      - Finally, check that this user belongs to the "evaluating" group.
+
+
 ### [Users, groups, ...](user/README.md#section)
 ---
 
@@ -184,12 +190,12 @@ port 4242 open**.
 >   - The IPv4 address of your server and its MAC (Media Access Control) address.
 >   - The number of commands executed with the `sudo` program.
 - **During eval:**
-  - how the script works.
-  - what "cron" is.
-  - how it was set up so that it runs every 10min.
-  - ensure that this script runs every minute, make sure that the script runs with dynamic values correctly.
-  - make the script stop running when the server has started up, without modifying the script itself. (you'll have to restart one last time)
-  - at startup, check if the script still exists in the same place, rights have remained unchanged, and not been modified.
+  - How the script works, by showing the code.
+  - What "cron" is.
+  - How it was set up so that it runs every 10min.
+  - Ensure that this script runs every minute, make sure that the script runs with dynamic values correctly.
+  - Make the script stop running when the server has started up, without modifying the script itself. (you'll have to restart one last time)
+  - At startup, check if the script still exists in the same place, rights have remained unchanged, and not been modified.
 - Example below:
 <p align=center>
   <img width="597" alt="Screen Shot 2021-10-10 at 5 11 35 PM" src="https://user-images.githubusercontent.com/43698378/136701814-cc671d24-9bd5-4d6f-8d89-bb2c19d4d6e9.png">
