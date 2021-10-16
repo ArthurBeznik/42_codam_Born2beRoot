@@ -19,7 +19,7 @@ groupadd <groupname>
 
 To list all groups, run
 ```bash
-cat /etc/group/
+cat /etc/group
 ```
 
 ### 3. Adding user to group
