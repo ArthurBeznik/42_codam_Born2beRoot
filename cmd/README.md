@@ -15,6 +15,11 @@ su
 who
 ```
 
+- Groups user is in
+```bash
+groups
+```
+
 ### Server related
 - Restart
 ```bash
