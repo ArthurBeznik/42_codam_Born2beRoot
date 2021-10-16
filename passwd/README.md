@@ -38,6 +38,12 @@ PASS_MIN_DAYS 2
 PASS_WARN_AGE 7
 ```
 
+### Commands
+- Display password of existing user
+```bash
+chage -l <user_name>
+```
+
 ### Useful links
 - [Set password policy in Linux](https://ostechnix.com/how-to-set-password-policies-in-linux/)
 - [Set strong password policy](https://computingforgeeks.com/enforce-strong-user-password-policy-ubuntu-debian/)
