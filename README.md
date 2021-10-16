@@ -28,7 +28,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - **During eval:**
 The student being evaluated should explain to you simply:
 - How a virtual machine works.
-- - The purpose of virtual machines.
+  - The purpose of virtual machines.
 
 ### Useful links
 - [THIS IS THE TUTORIAL I FOLLOWED TO INSTALL DEBIAN ON VM](https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/)
