@@ -47,7 +47,9 @@ chage <user_name>
 
 - Password expiration date
 ```bash
-chage -E <days> <user_name>
+chage -E <days> <user_name> (does not work)
+
+chage -M <days> <user_name>
 ```
 
 - Minimum number of days between password change
