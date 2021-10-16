@@ -72,6 +72,9 @@ Restart `rsyslog` service to take effect the changes:
 sudo systemctl restart rsyslog
 ```
 From now on, all sudo attempts will be logged in /var/log/sudo/sudo.log file.
+```bash
+cat /var/log/sudo/sudo.log
+```
 
 #### 4. Log sudo Command Input/Output
 
