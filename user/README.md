@@ -1,4 +1,10 @@
 ## Users, groups, ...
+To know in which groups a user is, run:
+```bash
+groups
+or
+groups <user_name>
+```
 
 ### 1. Adding user
 ```bash
