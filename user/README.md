@@ -17,6 +17,11 @@ cat /etc/passwd
 groupadd <groupname>
 ```
 
+To list all groups, run
+```bash
+cat /etc/group/
+```
+
 ### 3. Adding user to group
 ```bash
 usermod -aG <groupname> <username>
