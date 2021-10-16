@@ -57,7 +57,7 @@ The first step towards running a secure SSH server is to **change the default as
 
 Edit the config file with
 ```bash
-sudo vi /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 **Warning:** search how to use `sudo vi`, it's **VERY** confusing to use! Or just use `sudo nano`, nice interface, way easier to use.
 
