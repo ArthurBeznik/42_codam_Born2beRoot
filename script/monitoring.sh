@@ -6,7 +6,7 @@ echo "#CPU physical: "`cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc
 echo "#vCPU: "`cat /proc/cpuinfo | grep processor | wc -l`
 
 echo "#Memory Usage: "`free | grep Mem | awk '{printf("%d/%dMB (%.2f%%)\n", $3, $4, $3/$2 * 100.0}'`
-echo "#Disk Usage: "`df -h | awk 'NR==2{printf("%s/%s (%d%%)\n", $3, $2, $5)}'`
+echo "#Disk Usage: "`df -h / | awk 'NR==2{printf("%s/%s (%d%%)\n", $3, $2, $5)}'`
 
 echo "#CPU load: "`cat /proc/stat | awk '{printf("%.1f%%\n", ($2+$4)*100.0/($2+$4+$5))}' | head -1`
 
