@@ -90,6 +90,33 @@ sudo systemctl stop cron.service
 sudo systemctl restart cron.service
 sudo systemctl status cron.service
 ```
+### Create cron.log file
+Edit the /etc/rsyslog.d/50-default.conf file, enter:
+```bash
+sudo nano /etc/rsyslog.d/50-default.conf
+```
+Find the line:
+```bash
+#cron.*                         /var/log/cron.log
+```
+Comment out (uncomment line) in a configuration file as follows:
+```bash
+cron.*                         /var/log/cron.log
+```
+
+Save and close the file. Restart rsyslog service, enter:
+```bash
+sudo systemctl restart rsyslog
+```
+And verify:
+```bash
+sudo systemctl status rsyslog
+```
+You can now see cron log entries in `/var/log/cron.log` file:
+```bash
+sudo tail -f /var/log/cron.log
+sudo grep something /var/log/cron.log
+```
 
 ### Useful links
 - [Bash shell](https://www.2daygeek.com/bash-shell-script-view-linux-system-information/)
