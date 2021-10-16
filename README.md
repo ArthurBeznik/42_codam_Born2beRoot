@@ -40,9 +40,9 @@ The student being evaluated should explain to you simply:
 ## OS: Debian <a name="os"></a>
 - **During eval:**
 The student being evaluated should explain to you simply:
-- Their choice of operating system. 
-- The basic differences between CentOS and Debian.
-- Debian: the difference between aptitude and apt, and what APPArmor is.
+  - Their choice of operating system. 
+  - The basic differences between CentOS and Debian.
+  - Debian: the difference between aptitude and apt, and what APPArmor is.
 
 ### Useful links
 - [OS - Overview](https://www.tutorialspoint.com/operating_system/os_overview.htm)
