@@ -91,9 +91,9 @@ sudo systemctl restart cron.service
 sudo systemctl status cron.service
 ```
 ### Create cron.log file
-Edit the /etc/rsyslog.d/50-default.conf file, enter:
+Edit the /etc/rsyslog.conf file, enter:
 ```bash
-sudo nano /etc/rsyslog.d/50-default.conf
+sudo nano /etc/rsyslog.conf
 ```
 Find the line:
 ```bash
