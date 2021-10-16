@@ -86,7 +86,7 @@ Deselect **Desktop environment** and **GNOME** from **software selection** durin
 
 ---
 
-## `sudo` <a name="sudo"></a>
+## sudo <a name="sudo"></a>
 > To set up a strong configuration for your sudo group, you have to comply with the following requirements:
 > - Authentication using sudo has to be limited to 3 attempts in the event of an incorrect password.
 > - A custom message of your choice has to be displayed if an error due to a wrong password occurs when using sudo.
