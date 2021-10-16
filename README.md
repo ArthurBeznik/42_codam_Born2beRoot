@@ -25,8 +25,10 @@ This project aims to introduce you to the wonderful world of virtualization.
 - You only have to turn in a `signature.txt` file at the root of your repository. You must paste in it the signature of your machine’s virtual disk. Go to Submission and peer-evaluation for more information.
 
 ## VMs <a name="vm"></a>
-- How do VM work?
-- Purpose?
+- **During eval:**
+The student being evaluated should explain to you simply:
+- How a virtual machine works.
+- - The purpose of virtual machines.
 
 ### Useful links
 - [THIS IS THE TUTORIAL I FOLLOWED TO INSTALL DEBIAN ON VM](https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/)
@@ -36,10 +38,11 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 
 ## OS: Debian <a name="os"></a>
-- Why this OS?
-- Basic differences between Debian & CentOS?
-- Differences between `aptitude` and `apt`?
-- What's APPArmor?
+- **During eval:**
+The student being evaluated should explain to you simply:
+- Their choice of operating system. 
+- The basic differences between CentOS and Debian.
+- Debian: the difference between aptitude and apt, and what APPArmor is.
 
 ### Useful links
 - [OS - Overview](https://www.tutorialspoint.com/operating_system/os_overview.htm)
@@ -73,7 +76,8 @@ Using the command `lsblk` will display the partitions.
 
 ## No graphical interface <a name="graph"></a>
 > Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
-
+- **During eval:**
+> Ensure that the machine does not have a graphical environment at launch.
 Deselect **Desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
 
 X.org = debian.org ?
