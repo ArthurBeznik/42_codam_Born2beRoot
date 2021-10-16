@@ -95,7 +95,7 @@ Select **Configure the Logical Volume Manager**.
 You will be asked to write the current partitioning scheme before you continue. Agree and continue.
 
 #### Step 10
-Now we are at the LVM configuration menu. Select **Create Volume group** and continue. At the next screen you will be prompted to name your new volume group. Subject's example shows `wil--vg`, I will therefore call mine `abeznik`, `--vg` gets added by default.
+Now we are at the LVM configuration menu. Select **Create Volume group** and continue. At the next screen you will be prompted to name your new volume group. Subject's example shows `wil--vg`, I will therefore call mine `abeznik--vg`.
 <p align=center>
 <img width="524" alt="Screen Shot 2021-10-15 at 12 45 16 PM" src="https://user-images.githubusercontent.com/43698378/137475511-e43d210a-9555-4dea-b4d0-c241153e3132.png">
 </p>
