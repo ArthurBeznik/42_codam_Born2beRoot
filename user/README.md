@@ -41,5 +41,20 @@ To verify the new Debian sudo user was added to the group, run the command:
 getent group sudo
 ```
 
+### 4. Deleting user
+Log in to the server via SSH.
+```bash
+ssh -p <port> <user_name>@<hostname>
+```
+
+Switch to the root user using `su`.
+
+Delete user:
+```bash
+userdel <user_name>
+or
+userdel -r <user_name> to remove the user's home folder and email folder.
+```
+
 ### Useful links
 - [Create a sudo user Debian](https://phoenixnap.com/kb/create-a-sudo-user-on-debian)
