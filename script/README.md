@@ -123,6 +123,7 @@ sudo grep something /var/log/cron.log
 Sometimes, cron will disregard the output because we haven't set up the Mail To Address, which we don't. To disable it, add this line at the top of the crontab.
 ```bash
 crontab -e
+
 MAILTO=""
 ```
 Or add this ath the end of every cron job
