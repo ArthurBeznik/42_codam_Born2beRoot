@@ -119,6 +119,15 @@ sudo tail -f /var/log/cron.log
 sudo grep something /var/log/cron.log
 ```
 
+### MTA
+Sometimes, cron will disregard the output because we haven't set up the Mail To Address, which we don't. To disable it, add this line at the top of the crontab.
+```bash
+crontab -e
+MAILTO=""
+or add this ath the end of every cron job
+>/dev/null 2>&1
+```
+
 ### Useful links
 - [Bash shell](https://www.2daygeek.com/bash-shell-script-view-linux-system-information/)
 - [Physical CPU](https://developpaper.com/how-to-view-the-physical-cpu-logical-cpu-and-cpu-number-of-linux-servers/)
