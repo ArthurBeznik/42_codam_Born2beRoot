@@ -124,7 +124,9 @@ Sometimes, cron will disregard the output because we haven't set up the Mail To 
 ```bash
 crontab -e
 MAILTO=""
-or add this ath the end of every cron job
+```
+Or add this ath the end of every cron job
+```bash
 >/dev/null 2>&1
 ```
 
