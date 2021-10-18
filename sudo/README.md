@@ -71,7 +71,11 @@ Restart `rsyslog` service to take effect the changes:
 ```bash
 sudo systemctl restart rsyslog
 ```
-From now on, all sudo attempts will be logged in /var/log/sudo/sudo.log file.
+From now on, all sudo attempts will be logged in /var/log/sudo/sudo.log file. Let's try it out, run:
+```bash
+sudo echo hey
+```
+And then let's check if it was saved to log:
 ```bash
 cat /var/log/sudo/sudo.log
 ```
