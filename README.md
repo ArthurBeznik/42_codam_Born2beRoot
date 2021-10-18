@@ -231,4 +231,10 @@ ss is used to investigate sockets (to dump socket statistics)
 /usr/sbin/ufw status
 ```
 
+### Bonus <a name=bonus></a>
+
+#### Useful links
+- [lighttpd](https://www.rosehosting.com/blog/how-to-install-lighttpd-on-debian-9/)
+
+
 # That's all folks!
