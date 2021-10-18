@@ -238,6 +238,9 @@ ss is used to investigate sockets (to dump socket statistics)
 
 #### Useful links
 - [lighttpd](https://www.rosehosting.com/blog/how-to-install-lighttpd-on-debian-9/)
+- [WordPress](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-debian-9)
+
+
 
 
 # That's all folks!
