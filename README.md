@@ -244,7 +244,7 @@ VirtualBox. Theres a way to wix it!
 1) Turn off your VM
 2) Go to your VM settings in VirtualBox
 3) Network -> Adapter 1 -> Advanced -> Port forwarding
-4)Add new rule (little green button on right top side) and next parameters:
+4) Add new rule (little green button on right top side) and next parameters:
 
  | Protocol |      Host IP    |   Host Port  |     Guest IP  |     Guest Port
  | TCP      |      127.0.0.1  |   4242       |     10.0.2.15 |     4242      
