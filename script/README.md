@@ -75,13 +75,10 @@ We need to use a combination of `wall` and `cron` in order for our script to run
 ```bash
 crontab -e
 ```
-And add the following line:
+And add the following lines:
 ```bash
-*/10 * * * * bash monitoring.sh > script.txt | wall script.txt
-or
-*/10 * * * * /root/monitoring.sh
-or
-*/10 * * * * /root/monitoring.sh > /root/inf.txt | wall /root/inf.txt 
+@reboot sleep 7.5 && /root/script/monitoring.sh | wall
+*/10 * * * * /root/script/monitoring.sh | wall
 ```
 This tells the crontab to run a job every 10min.
 ```bash
