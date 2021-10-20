@@ -45,19 +45,19 @@ PASS_WARN_AGE 7
 chage <user_name>
 ```
 
-- Password expiration date
+- Password expiration date (30 days)
 ```bash
 chage -E <days> <user_name> (does not work)
 
 chage -M <days> <user_name>
 ```
 
-- Minimum number of days between password change
+- Minimum number of days between password change (2 days)
 ```bash
 chage -m <days> <user_name>
 ```
 
-- Warning before password expires
+- Warning before password expires (7 days)
 ```bash
 chage -W <days> <user_name>
 ```
