@@ -22,9 +22,8 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [Bonus](#bonus)
 
 ## Subject / Eval sheet
-[subject.pdf](/Born2beroot.pdf#section)
-
-[eval_sheet.pdf](/eval_sheet_b2br.pdf#section)
+- [subject.pdf](/Born2beroot.pdf#section)
+- [eval_sheet.pdf](/eval_sheet_b2br.pdf#section)
 
 ## General guidelines <a name="guide"></a>
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is **mandatory**.
