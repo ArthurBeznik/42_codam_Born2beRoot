@@ -22,7 +22,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [Bonus](#bonus)
 
 ## Subject
-[Subject](Born2beRoot.pdf#section)
+[subject.pdf](/Born2beRoot.pdf#section)
 [Born2beroot.pdf](https://github.com/Arrtthhuur/Born2beRoot/files/7379044/Born2beroot.pdf)
 
 ## General guidelines <a name="guide"></a>
