@@ -23,7 +23,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ## Subject
 [subject.pdf](/Born2beroot.pdf#section)
-[Born2beroot.pdf](https://github.com/Arrtthhuur/Born2beRoot/files/7379044/Born2beroot.pdf)
+
 
 ## General guidelines <a name="guide"></a>
 - The use of **VirtualBox** (or UTM if you can’t use VirtualBox) is **mandatory**.
