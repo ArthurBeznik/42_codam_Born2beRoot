@@ -280,6 +280,7 @@ Now you can control your virtual machine from the host terminal.
 
 ***How to change hostname?***
 ```bash
+hostnamectl set-hostname <server_name>
 sudo nano /etc/hostname
 ```
 
