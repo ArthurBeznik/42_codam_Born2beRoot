@@ -21,7 +21,7 @@ password        requisite                       pam_pwquality.so [...]
 ```
 and add the following:
 ```bash
-minlen=10 difok=7 ucredit=1 dcredit=1 reject_username maxrepeat=3 enforce_for_root
+minlen=10 difok=7 ucredit=-1 dcredit=-1 reject_username maxrepeat=3 enforce_for_root
 ```
 
 ### Password expiration period
