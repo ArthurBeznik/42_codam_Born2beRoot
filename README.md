@@ -211,34 +211,6 @@ port 4242 open**.
 ### [Monitoring script](script/#section)
 ---
 
-## Check some of the subject’s requirements:
-<p align=center>
-<img width="636" alt="Screen Shot 2021-10-10 at 5 12 50 PM" src="https://user-images.githubusercontent.com/43698378/136701852-a3309cc5-fae6-4d6e-9ca5-939b0ad138f2.png">
-</p>
-
-Commands used:
-```bash
-head -n 2 /etc/os-release
-```
-```bash
-/usr/sbin/aa-status
-```
-```bash
-ss -tunlp
-```
-ss is used to investigate sockets (to dump socket statistics)
-
-- `t` : display TCP sockets
-- `u` : display UDP sockets
-- `n` : show exact brandwidth values
-- `l` : display only listening sockets
-- `p` : show process using socket
-```bash
-/usr/sbin/ufw status
-```
-
----
-
 ## Bonus <a name=bonus></a> (work in progress)
 
 Network adapter configuration
@@ -262,20 +234,32 @@ VirtualBox. Theres a way to wix it!
 
 Now you can control your virtual machine from the host terminal.
 
+#### Useful links
+- [lighttpd](https://www.rosehosting.com/blog/how-to-install-lighttpd-on-debian-9/)
+- [WordPress](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-debian-9)
+
+---
+
+
 ## Eval Cheat Sheet <a name=ecs></a>
 
+<p align=center>
+<img width="636" alt="Screen Shot 2021-10-10 at 5 12 50 PM" src="https://user-images.githubusercontent.com/43698378/136701852-a3309cc5-fae6-4d6e-9ca5-939b0ad138f2.png">
+</p>
 
-1) ```lsblk``` -> check partitions
-3) ```sudo aa-status``` -> AppArmor status
-4) ```getent group sudo``` -> sudo group users
-5) ```getent group user42``` -> user42 group users
-6) ```sudo service ssh status``` -> ssh status
-7) ```sudo ufw status``` -> ufw status
-8) ```ssh username@ipadress -p 4242``` -> connect to VM from your host (physical) machine via SSH
-9) ```sudo visudo``` -> sudo policy
-10) ```nano /etc/login.defs``` -> password expire policy
-11) ```nano /etc/pam.d/common-password``` -> password policy
-12) ```sudo crontab -l``` -> cron schedule
+1) ```head -n 2 /etc/os-release``` -> display OS
+2) ```ss -tunlp``` -> display sockets
+3) ```lsblk``` -> check partitions
+4) ```sudo aa-status``` -> AppArmor status
+5) ```getent group sudo``` -> sudo group users
+6) ```getent group user42``` -> user42 group users
+7) ```sudo service ssh status``` -> ssh status
+8) ```sudo ufw status``` -> ufw status
+9) ```ssh username@ipadress -p 4242``` -> connect to VM from your host (physical) machine via SSH
+10) ```sudo visudo``` -> sudo policy
+11) ```nano /etc/login.defs``` -> password expire policy
+12) ```nano /etc/pam.d/common-password``` -> password policy
+13) ```sudo crontab -l``` -> cron schedule
 
 
 ***How to change hostname?***
@@ -325,10 +309,7 @@ To stop script running on boot you just need to remove or commit
 ```
 line in crontab file.
 
-#### Useful links
-- [lighttpd](https://www.rosehosting.com/blog/how-to-install-lighttpd-on-debian-9/)
-- [WordPress](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-debian-9)
-
+---
 
 
 # That's all folks!
