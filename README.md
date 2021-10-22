@@ -265,17 +265,17 @@ Now you can control your virtual machine from the host terminal.
 ## Eval Cheat Sheet <a name=ecs></a>
 
 
-1) lsblk                              1 <- Check partitions
-2) sudo aa-status                     2 <- AppArmor status
-3) getent group sudo                  3 <- sudo group users
-4) getent group user42                4 <- user42 group users
-5) sudo service ssh status            5 <- ssh status, yep
-6) sudo ufw status                    6 <- ufw status
-7) ssh username@ipadress -p 4242      7 <- connect to VM from your host (physical) machine via SSH
-8) sudo visudo                        8 <- sudo policy
-9) nano /etc/login.defs               9 <- password expire policy
-10) nano /etc/pam.d/common-password  10 <- password policy
-11) sudo crontab -l                  11 <- cron schedule
+1) ```lsblk``` -> check partitions
+3) ```sudo aa-status``` -> AppArmor status
+4) ```getent group sudo``` -> sudo group users
+5) ```getent group user42``` -> user42 group users
+6) ```sudo service ssh status``` -> ssh status
+7) ```sudo ufw status``` -> ufw status
+8) ```ssh username@ipadress -p 4242``` -> connect to VM from your host (physical) machine via SSH
+9) ```sudo visudo``` -> sudo policy
+10) ```nano /etc/login.defs``` -> password expire policy
+11) ```nano /etc/pam.d/common-password``` -> password policy
+12) ```sudo crontab -l``` -> cron schedule
 
 
 ***How to change hostname?***
