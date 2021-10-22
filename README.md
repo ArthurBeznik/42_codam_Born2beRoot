@@ -20,6 +20,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [Useful Commands](#cmd)
 - [Monitoring script](#script)
 - [Bonus](#bonus)
+- [Eval Cheat Sheet](#ecs)
 
 ## Subject / Eval sheet
 - [subject.pdf](/Born2beroot.pdf#section)
@@ -240,7 +241,7 @@ ss is used to investigate sockets (to dump socket statistics)
 
 ## Bonus <a name=bonus></a> (work in progress)
 
-STEP 4 - Network adapter configuration
+Network adapter configuration
 
 You may not be able to connect to your VM via SSH with standard settings in
 VirtualBox. Theres a way to wix it!
@@ -260,6 +261,72 @@ VirtualBox. Theres a way to wix it!
 ```
 
 Now you can control your virtual machine from the host terminal.
+
+## Eval Cheat Sheet <a name=ecs></a>
+
+|---------------------------------------|
+| 1) lsblk                              1 <- Check partitions
+| 2) sudo aa-status                     2 <- AppArmor status
+| 3) getent group sudo                  3 <- sudo group users
+| 4) getent group user42                4 <- user42 group users
+| 5) sudo service ssh status            5 <- ssh status, yep
+| 6) sudo ufw status                    6 <- ufw status
+| 7) ssh username@ipadress -p 4242      7 <- connect to VM from your host (physical) machine via SSH
+| 8) sudo visudo                        8 <- sudo policy
+| 9) nano /etc/login.defs               9 <- password expire policy
+| 10) nano /etc/pam.d/common-password  10 <- password policy
+| 11) sudo crontab -l                  11 <- cron schedule
+|---------------------------------------|
+
+***How to change hostname?***
+```bash
+sudo nano /etc/hostname
+```
+
+***Where is sudo logs in /var/log/sudo?***
+```bash
+cd /var/log/sudo/00/00
+ls
+```
+You will see a lot of directories with names like 01 2B 9S 4D etc. They contain the logs we need.
+
+```bash
+sudo apt update
+ls
+sudo echo hey
+```
+Now you see that we have a new directory here.
+```bash
+cd <nameofnewdirectory> && ls
+cat log <- Input log
+cat ttyout <- Output log
+```
+
+***How to add and remove port 8080 in UFW?***
+```bash
+sudo ufw allow 8080 <- allow
+sudo ufw status <- check
+sudo ufw deny 8080 <- deny (yes yes)
+```
+
+***How to run script every 30 seconds?***
+```bash
+sudo crontab -e
+```
+Remove or commit previous cron "schedule" and add next lines in crontab file
+```bash
+|*************************************************|
+| */1 * * * * /path/to/monitoring.sh              |
+| */1 * * * * sleep 30s && /path/to/monitoring.sh |
+|*************************************************|
+```
+To stop script running on boot you just need to remove or commit
+```bash
+|********************************|
+| @reboot /path/to/monitoring.sh |
+|********************************|
+```
+line in crontab file.
 
 #### Useful links
 - [lighttpd](https://www.rosehosting.com/blog/how-to-install-lighttpd-on-debian-9/)
