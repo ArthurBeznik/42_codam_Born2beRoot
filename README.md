@@ -264,19 +264,19 @@ Now you can control your virtual machine from the host terminal.
 
 ## Eval Cheat Sheet <a name=ecs></a>
 
-|---------------------------------------|
-| 1) lsblk                              1 <- Check partitions
-| 2) sudo aa-status                     2 <- AppArmor status
-| 3) getent group sudo                  3 <- sudo group users
-| 4) getent group user42                4 <- user42 group users
-| 5) sudo service ssh status            5 <- ssh status, yep
-| 6) sudo ufw status                    6 <- ufw status
-| 7) ssh username@ipadress -p 4242      7 <- connect to VM from your host (physical) machine via SSH
-| 8) sudo visudo                        8 <- sudo policy
-| 9) nano /etc/login.defs               9 <- password expire policy
-| 10) nano /etc/pam.d/common-password  10 <- password policy
-| 11) sudo crontab -l                  11 <- cron schedule
-|---------------------------------------|
+
+1) lsblk                              1 <- Check partitions
+2) sudo aa-status                     2 <- AppArmor status
+3) getent group sudo                  3 <- sudo group users
+4) getent group user42                4 <- user42 group users
+5) sudo service ssh status            5 <- ssh status, yep
+6) sudo ufw status                    6 <- ufw status
+7) ssh username@ipadress -p 4242      7 <- connect to VM from your host (physical) machine via SSH
+8) sudo visudo                        8 <- sudo policy
+9) nano /etc/login.defs               9 <- password expire policy
+10) nano /etc/pam.d/common-password  10 <- password policy
+11) sudo crontab -l                  11 <- cron schedule
+
 
 ***How to change hostname?***
 ```bash
@@ -315,16 +315,12 @@ sudo crontab -e
 ```
 Remove or commit previous cron "schedule" and add next lines in crontab file
 ```bash
-|*************************************************|
-| */1 * * * * /path/to/monitoring.sh              |
-| */1 * * * * sleep 30s && /path/to/monitoring.sh |
-|*************************************************|
+*/1 * * * * /path/to/monitoring.sh
+*/1 * * * * sleep 30s && /path/to/monitoring.sh
 ```
 To stop script running on boot you just need to remove or commit
 ```bash
-|********************************|
-| @reboot /path/to/monitoring.sh |
-|********************************|
+@reboot /path/to/monitoring.sh
 ```
 line in crontab file.
 
