@@ -173,9 +173,6 @@ port 4242 open**.
 ### [Users, groups, ...](user/README.md#section)
 ---
 
-## APPArmor <a name="apparmor"></a>
-### [APPArmor set up](apparmor/README.md#section)
----
 
 
 ## Useful Commands <a name="cmd"></a>
@@ -263,12 +260,26 @@ Now you can control your virtual machine from the host terminal.
 12) ```nano /etc/pam.d/common-password``` -> password policy
 13) ```sudo crontab -l``` -> cron schedule
 
+***How to add a new user?***
+```bash
+sudo adduser <user_name>
+```
+
+***How to create a new group?***
+```bash
+sudo addgroup <group_name>
+```
+
+***How to add a user to a group?***
+```bash
+sudo usermod -aG <group_name> <user_name>
+```
 
 ***How to change hostname?***
 ```bash
 hostnamectl set-hostname <server_name>
 ```
-Then connect to the server via ssh ```ssh username@ipadress -p 4242```, you should see that the hostname has changed, but we still need to change this:
+Then connect to the server via ssh ```ssh username@ipadress -p 4242```, you should see that the hostname has changed, but we still need to edit this file:
 ```bash
 sudo nano /etc/hosts
 ```
@@ -289,15 +300,13 @@ sudo echo hey
 Now you see that we have a new directory here.
 ```bash
 cd <nameofnewdirectory> && ls
-cat log <- Input log
-cat ttyout <- Output log
 ```
 
 ***How to add and remove port 8080 in UFW?***
 ```bash
 sudo ufw allow 8080 <- allow
 sudo ufw status <- check
-sudo ufw deny 8080 <- deny (yes yes)
+sudo ufw delete allow 8080 <- delete
 ```
 
 ***How to run script every 30 seconds?***
