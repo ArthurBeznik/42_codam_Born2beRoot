@@ -245,6 +245,8 @@ Now you can control your virtual machine from the host terminal.
 
 ## Eval Cheat Sheet <a name=ecs></a>
 
+For the eval, since you have to compare the signature.txt in your git with the signature of the VM you're doing the eval on, I made a ***snapshot*** of my VM. And I would just have to reset the initial state of the snapshot after the eval, and I would therefore have the same signature for all 3 evals. ez pz.
+
 <p align=center>
 <img width="636" alt="Screen Shot 2021-10-10 at 5 12 50 PM" src="https://user-images.githubusercontent.com/43698378/136701852-a3309cc5-fae6-4d6e-9ca5-939b0ad138f2.png">
 </p>
