@@ -282,7 +282,7 @@ Then connect to the server via ssh ```ssh username@ipadress -p 4242```, you shou
 ```bash
 sudo nano /etc/hosts
 ```
-And change the line with the former hostname to the new hostname. You can then reboot ```sudo reboot``` and the hostname should still be new one.
+And change the line with the former hostname to the new hostname. You can then reboot ```sudo reboot``` and the hostname should still be the new one.
 
 ***Where is sudo logs in /var/log/sudo?***
 ```bash
