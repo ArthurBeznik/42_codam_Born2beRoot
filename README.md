@@ -2,6 +2,10 @@
 
 This project aims to introduce you to the wonderful world of virtualization.
 
+<p align=center>
+<img width="727" alt="Screen Shot 2021-10-23 at 4 39 08 PM" src="https://user-images.githubusercontent.com/43698378/138560926-41b9ed41-cd9c-4d35-96a0-bcffa25d0d3c.png">
+</p>
+
 ***Share some love, star this repo buddy <3***
 
 **Warning:** Check thoroughly what you are configuring, I made a few last minute changes with my VM before the eval, so some configs might not be all good!
