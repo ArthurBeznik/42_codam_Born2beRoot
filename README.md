@@ -17,7 +17,6 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [SSH](#ssh)
 - [UFW](#ufw)
 - [Password policy](#pass)
-- [Useful Commands](#cmd)
 - [Monitoring script](#script)
 - [Bonus](#bonus)
 - [Eval Cheat Sheet](#ecs)
@@ -59,6 +58,7 @@ Explain simply:
 - [APPArmor](https://www.howtogeek.com/118222/htg-explains-what-apparmor-is-and-how-it-secures-your-ubuntu-system/)
 ---
 
+
 ## Hostname <a name="host"></a>
 > The hostname of your virtual machine must be your **login ending with 42** (e.g., abeznik42).
 - **During eval:**
@@ -67,6 +67,7 @@ Explain simply:
   - You can now restore the machine to the original hostname.
 ### [Changing hostname](hostname/README.md#section)
 ---
+
 
 ## Encrypted partitions <a name="encrypt"></a>
 > You must create **at least 2 encrypted partitions using LVM**. Below is an example of the
@@ -84,6 +85,7 @@ Using the command `lsblk` will display the partitions.
 ### [Encrypt partitions with LVM](lvm/README.md#section)
 ---
 
+
 ## No graphical interface <a name="graph"></a>
 > Since it is a matter of setting up a server, you will install the minimum of services. For this reason, a graphical interface is of no user here. It is therefore forbidden to install X.org or any other equivalent graphics server.
 - **During eval:**
@@ -92,6 +94,7 @@ Using the command `lsblk` will display the partitions.
 Deselect **Desktop environment** and **GNOME** from **software selection** during the install in order to get a non-GUI Debian install.
 
 ---
+
 
 ## sudo <a name="sudo"></a>
 > To set up a strong configuration for your sudo group, you have to comply with the following requirements:
@@ -111,6 +114,7 @@ Deselect **Desktop environment** and **GNOME** from **software selection** durin
 ### [sudo installation & configuration](sudo/README.md#section)
 ---
 
+
 ## SSH service <a name="ssh"></a>
 > A SSH service will be running on **port 4242 only**. For security reasons, it must **not** be
 possible to connect using SSH as root.
@@ -125,6 +129,7 @@ possible to connect using SSH as root.
 ### [SSH installation & configuration](ssh/README.md#section)
 ---
 
+
 ## UFW firewall <a name="ufw"></a>
 > You have to configure your operating system with the **UFW firewall** (Uncomplicated FireWall) and thus leave **only
 port 4242 open**.
@@ -137,6 +142,7 @@ port 4242 open**.
   - Finally, delete this new rule with the help of the student being evaluated.
 ### [UFW installation & configuration](ufw/README.md#section)
 ---
+
 
 ## Strong password policy <a name="pass"></a>
 > To set up a strong password policy, you have to comply with the following requirements:
@@ -156,6 +162,7 @@ port 4242 open**.
 ### [Strong password installation & configuration](passwd/README.md#section)
 ---
 
+
 ## User <a name="user"></a>
 > In addition to the root user, a user with your login as username has to be present. And has to belong to `sudo` and `user42` groups.
 - **During eval:**
@@ -167,15 +174,9 @@ port 4242 open**.
     - Create a group named "evaluating" and assign it to this user. 
       - Finally, check that this user belongs to the "evaluating" group.
 
-
 ### [Users, groups, ...](user/README.md#section)
 ---
 
-
-
-## Useful Commands <a name="cmd"></a>
-### [Here are a few useful commands, cheers](cmd/README.md#section)
----
 
 ## Monitoring script <a name="script"></a>
 >- `monitoring.sh` developped in `bash`.
