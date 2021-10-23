@@ -4,7 +4,7 @@ This project aims to introduce you to the wonderful world of virtualization.
 
 ***Share some love, star this repo buddy <3***
 
-**Warning:** Check thorougly what you are configuring, I made a few last minute changes with my VM before the eval, so some configs might not be all good!
+**Warning:** Check thoroughly what you are configuring, I made a few last minute changes with my VM before the eval, so some configs might not be all good!
 
 # Table of entries
 - [General guidelines](#guide)
