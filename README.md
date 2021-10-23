@@ -17,8 +17,6 @@ This project aims to introduce you to the wonderful world of virtualization.
 - [SSH](#ssh)
 - [UFW](#ufw)
 - [Password policy](#pass)
-- [User](#user)
-- [APPArmor](#apparmor)
 - [Useful Commands](#cmd)
 - [Monitoring script](#script)
 - [Bonus](#bonus)
