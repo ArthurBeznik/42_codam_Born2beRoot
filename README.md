@@ -267,8 +267,12 @@ Now you can control your virtual machine from the host terminal.
 ***How to change hostname?***
 ```bash
 hostnamectl set-hostname <server_name>
-sudo nano /etc/hostname
 ```
+Then connect to the server via ssh ```ssh username@ipadress -p 4242```, you should see that the hostname has changed, but we still need to change this:
+```bash
+sudo nano /etc/hosts
+```
+And change the line with the former hostname to the new hostname. You can then reboot ```sudo reboot``` and the hostname should still be new one.
 
 ***Where is sudo logs in /var/log/sudo?***
 ```bash
